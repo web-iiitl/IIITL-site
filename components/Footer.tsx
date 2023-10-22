@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-2/6 p-4 text-white ">
-          <Image src="/Logo/Logo.png" alt="Image" width={120} height={160} />
+          <Image src="/iiitlLogo.png" alt="Image" width={120} height={160} />
           <p>Indian Institute of Information Technology,Lucknow</p>
           <p>
             R22F+8JR, Chak Ganjaria, C. G. City, Ahmamau, Uttar Pradesh 226002,
