@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-500">
+    <footer className="bg-bluel">
       <div className="flex justify-center">
         <div className="w-1/4 p-4">
-          <div className="bg-blue-500 p-4 flex flex-col">
+          <div className="bg-bluel p-4 flex flex-col">
             <h2 className="text-lg font-semibold text-white relative">
               <div className="border-b-2 border-white absolute bottom-0 left-0 w-16"></div>
               Explore
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-1/4 p-4">
-          <div className="bg-blue-500 p-4 ">
+          <div className="bg-bluel p-4 ">
             <h2 className="text-lg font-semibold text-white relative">
               <div className="border-b-2 border-white absolute bottom-0 left-0 w-20"></div>
               Quick Links
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-1/4 p-4 border-r border-dotted border-gray-400">
-          <div className="bg-blue-500 p-4 ">
+          <div className="bg-bluel p-4 ">
             <h2 className="text-lg font-semibold text-white relative">
               <div className="border-b-2 border-white absolute bottom-0 left-0 w-20"></div>
               Solutions
@@ -68,7 +68,7 @@ const Footer = () => {
               Developers
             </Link>
           </div>
-          <div className="bg-blue-500 p-4 ">
+          <div className="bg-bluel p-4 ">
             <h2 className="text-lg font-semibold text-white relative">
               <div className="border-b-2 border-white absolute bottom-0 left-0 w-20"></div>
               Support
@@ -82,7 +82,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-2/6 p-4 text-white ">
-          <Image src="/iiitlLogo.png" alt="Image" width={120} height={160} />
+
+          <Image src="/iiitlLogo.png" alt="Image" width={120} height={160} className="brightness-0 invert" />
+
+        
           <p>Indian Institute of Information Technology,Lucknow</p>
           <p>
             R22F+8JR, Chak Ganjaria, C. G. City, Ahmamau, Uttar Pradesh 226002,
