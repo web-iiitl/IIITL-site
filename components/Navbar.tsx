@@ -101,7 +101,9 @@ const Navbarr = () => {
                 People
               </Nav.Link>
               <NavDropdown title="Student Life" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+
+                
+                <NavDropdown.Item href="/campus">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
                   Another action
                 </NavDropdown.Item>
