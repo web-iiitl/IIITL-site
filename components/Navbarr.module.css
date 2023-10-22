@@ -2,12 +2,12 @@
 .active {
     /* background-color: #3490dc; */
     color: #fff;
-    border-bottom: 5px solid blue;
+    border-bottom: 5px solid rgb(55 95 155 / var(--tw-bg-opacity));;
     color: black; /* Add underline as you mentioned in your original code */
   }
   
   .hover {
-    background-color: #3490dc;
+    background-color: rgb(55 95 155 / var(--tw-bg-opacity));;
     color: #fff;
     text-decoration: underline; /* Add underline as you mentioned in your original code */
   }
