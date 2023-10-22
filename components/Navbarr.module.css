@@ -1,8 +1,9 @@
 /* Navbarr.module.css */
 .active {
-    background-color: #3490dc;
+    /* background-color: #3490dc; */
     color: #fff;
-    text-decoration: underline; /* Add underline as you mentioned in your original code */
+    border-bottom: 5px solid blue;
+    color: black; /* Add underline as you mentioned in your original code */
   }
   
   .hover {

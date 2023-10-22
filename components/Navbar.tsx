@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router"; // Import useRouter
 import Marquee from "react-fast-marquee";
-import logo from "../public/IIITLlogo.png";
-import Head from "./heading_transition";
-import Department_dropdown from "./Department_dropdown";
 import { useState, useEffect } from "react"; // Import useEffect
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -16,6 +13,7 @@ import Image from "next/image";
 import Heading from "./Heading";
 
 import styles from "./Navbarr.module.css"; // Create a CSS module for styling
+import React from "react";
 
 const Navbarr = () => {
   const router = useRouter(); // Initialize the router
