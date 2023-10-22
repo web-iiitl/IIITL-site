@@ -12,9 +12,9 @@ const Contact = () => {
                 <div className="p-4 sm:p-5">
                     <div className="border-2 border-blue-500 rounded text-black m-4 sm:m-8 relative">
                         <div className="flex flex-col sm:flex-row">
-                            <div className="w-full sm:w-1/2 md:border-r-2 md:border-b-0  border-b-2 border-gray-500">
+                            <div className="w-full sm:w-1/2 md:border-r-2 md:border-b-0  border-b-2 border-blue-500">
                                 <div className="m-4 ">
-                                    <table className="table-auto border-2 w-full mx-auto my-4 sm:my-8">
+                                    <table className="table-auto border-2 w-full mx-auto my-4 sm:my-8 border-gray-300">
                                         <thead>
                                             <tr>
                                                 <th className="border-2 px-4 py-2">Address:</th>
@@ -47,9 +47,8 @@ const Contact = () => {
                                 ></iframe>
                             </div>
                         </div>
-                        <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-                        <div className="w-full overflow-x-auto">
-                            <table className="table-auto border-2 w-full mx-auto my-7">
+                        <div className="w-full overflow-x-auto border-t-2 border-t-blue-500">
+                            <table className="table-auto border-2 border-gray-300 w-full mx-auto my-7">
                                 <thead>
                                     <tr>
                                         <th className="border-2 px-4 py-2">Purpose</th>
