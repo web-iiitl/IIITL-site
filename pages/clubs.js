@@ -29,7 +29,7 @@ const Clubs = ({ clubs }) => {
                         <Link href={`/clubs/${item._id}`} key={index}>
                             <div className={styles.clubCard}>
                                 <img
-                                    className={styles.clubImage}
+                                    className={styles.clubImage} 
                                     src={urlFor(item.picture[0]).url()}
                                     alt={`Club ${index + 1}`}
                                 />
@@ -40,7 +40,7 @@ const Clubs = ({ clubs }) => {
                 </Zoom>
             </div>
         </div>
-    )
+    )   
 }
 
 
