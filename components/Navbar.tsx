@@ -139,6 +139,14 @@ const Navbarr = () => {
                 Events
               </Nav.Link>
               <Nav.Link
+                href="/clubs"
+                onMouseEnter={() => handleTabHover("Clubs")}
+                onMouseLeave={handleTabLeave}
+                className={activeTab === "Clubs" ? styles.active : ""}
+              >
+                Clubs
+              </Nav.Link>
+              <Nav.Link
                 href="/placements"
                 onMouseEnter={() => handleTabHover("Placements")}
                 onMouseLeave={handleTabLeave}
