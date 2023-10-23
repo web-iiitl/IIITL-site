@@ -22,7 +22,7 @@ const people = ({ people, departments }) => {
 
             <div className='flex w-full min-h-[700px]'>
                 <div className='w-1/4 px-5 py-10 text-center items-center flex flex-col bg-[#375F9B]'>
-                    <h1 className='text-4xl mb-10 text-white font-semibold '>People</h1>
+                    <h1 className='text-4xl mb-10 text-white font-semibold border-b-2'>People</h1>
                     {
                         departments.map((item, index) => {
                             return (
@@ -38,13 +38,13 @@ const people = ({ people, departments }) => {
                     {
                         departments.map((item, index) => {
                             return (
-                                <div className='my-12' key={index}>
-                                    <h1 className='text-3xl '>{item.name}</h1>
+                                <div className='my-12 shadow-md p-4 rounded-md hover:scale-105 duration-300 bg-slate-100' key={index}>
+                                    <h1 className='text-3xl'>{item.name}</h1>
                                     {
                                         item?.people?.map((it, ind) => {
                                             return (
-                                                <div key={it}>
-                                                    <h1 className='text-2xl my-4 '>{it.SubDepartment}</h1>
+                                                <div key={it} >
+                                                    <h1 className='text-2xl my-4 border-b-2 border-slate-400'>{it.SubDepartment}</h1>
                                                     <div className=' grid grid-flow-row grid-cols-3 gap-10'>
                                                         {
                                                             it.people?.map((ct, num) => {

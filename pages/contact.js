@@ -34,7 +34,7 @@ const Contact = () => {
                                     </table>
                                 </div>
                             </div>
-                            <div className="w-full sm:w-1/2">
+                            <div className="w-full sm:w-1/2 overflow-hidden">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.22797035126!2d81.02144971071534!3d26.80086887661701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1697909167466!5m2!1sen!2sin"
                                     width="100%"
