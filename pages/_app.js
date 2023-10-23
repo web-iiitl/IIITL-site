@@ -12,6 +12,11 @@ export default function App({ Component, pageProps }) {
         <title>Indian Institute of Information Technology, Lucknow</title>
       </Head>
      <Component {...pageProps} />
+     <style jsx global>{`
+        body {
+          background:#E5E7E5; 
+        }
+      `}</style>
   </SSRProvider>
     )
   
