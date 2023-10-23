@@ -46,7 +46,7 @@ const people= ({people}) => {
                         it.qualifications.map((item,ind)=>{
                           return(
                            <div key={ind}>
-                              <h2 className='font-serif lg:text-3xl text-bluel md:text-5xl px-10 pt-5 sm:text-4xl max-sm:text-2xl border-b-2'>{item.title}</h2>
+                              <h2 className='font-serif lg:text-3xl text-bluel md:text-5xl px-10 pt-5 sm:text-4xl max-sm:text-2xl border-b-2 border-gray-400'>{item.title}</h2>
                               <div className='px-10 py-4'>
                               <PortableText
                               content={item.text}
