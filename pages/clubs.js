@@ -4,7 +4,7 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from 'next/link';
 import Zoom from 'react-reveal/Zoom';
-import styles from './Clubs.module.css';
+import styles from './clubs.module.css';
 
 const Clubs = ({ clubs }) => {
     const client = createClient({
