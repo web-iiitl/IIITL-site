@@ -32,9 +32,14 @@ const Navbarr = () => {
       setActiveTab("Admissions");
     } else if (router.pathname === "/people") {
       setActiveTab("People");
-    }else if (router.pathname === "/news") {
+    } else if (router.pathname === "/news") {
       setActiveTab("News");
+    } else if (router.pathname.startsWith("/course")) {
+      setActiveTab("Courses");
+    } else if (router.pathname.startsWith("/studentLife")) {
+      setActiveTab("studentLife");
     }
+    
   };
 
   useEffect(() => {
@@ -45,9 +50,14 @@ const Navbarr = () => {
       setActiveTab("Admissions");
     } else if (router.pathname === "/people") {
       setActiveTab("People");
-    }else if (router.pathname === "/news") {
+    } else if (router.pathname === "/news") {
       setActiveTab("News");
+    } else if (router.pathname.startsWith("/course")) {
+      setActiveTab("Courses");
+    } else if (router.pathname.startsWith("/studentLife")) {
+      setActiveTab("studentLife");
     }
+    
     // Add similar conditions for other pages
   }, [router.pathname]);
 
@@ -100,10 +110,10 @@ const Navbarr = () => {
               >
                 People
               </Nav.Link>
-              <NavDropdown title="Student Life" id="navbarScrollingDropdown">
-
-                
-                <NavDropdown.Item href="/campus">Action</NavDropdown.Item>
+              <NavDropdown title="Student Life" id="navbarScrollingDropdown"  onMouseEnter={() => handleTabHover("studentLife")}
+                onMouseLeave={handleTabLeave}
+                className={activeTab === "studentLife" ? styles.active : ""}>
+                <NavDropdown.Item href="/studentLife/events">Events</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
                   Another action
                 </NavDropdown.Item>
@@ -112,8 +122,10 @@ const Navbarr = () => {
                   Something else here
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Courses" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">UG Courses</NavDropdown.Item>
+              <NavDropdown title="Courses" id="navbarScrollingDropdown" onMouseEnter={() => handleTabHover("Courses")}
+                onMouseLeave={handleTabLeave}
+                className={activeTab === "Courses" ? styles.active : ""}>
+                <NavDropdown.Item href="/course/UGCourses">UG Courses</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
                   PG Courses
                 </NavDropdown.Item>
@@ -129,14 +141,6 @@ const Navbarr = () => {
                 className={activeTab === "News" ? styles.active : ""}
               >
                 News
-              </Nav.Link>
-              <Nav.Link
-                href="/events"
-                onMouseEnter={() => handleTabHover("Events")}
-                onMouseLeave={handleTabLeave}
-                className={activeTab === "Events" ? styles.active : ""}
-              >
-                Events
               </Nav.Link>
               <Nav.Link
                 href="/clubs"
