@@ -54,7 +54,7 @@ const Navbarr = () => {
 
   return (
     <div>
-      <div className="bg-white p-5 flex justify-items-center items-center">
+      <div className="p-5 flex justify-items-center items-center">
         <div>
           <Link href="/">
             <Image
