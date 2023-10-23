@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router"; // Import useRouter
 import Marquee from "react-fast-marquee";
+import Marque from "./Marque";
 import { useState, useEffect } from "react"; // Import useEffect
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -62,6 +63,7 @@ const Navbarr = () => {
               height={10}
             />
           </Link>
+          
         </div>
         <Heading />
       </div>
@@ -165,19 +167,8 @@ const Navbarr = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className={`p-1 mt-2 mb-2 ${styles.hover}`}>
-        <Marquee
-          gradient={true}
-          gradientColor={[26, 140, 184]}
-          pauseOnHover={true}
-        >
-          <span className="inline-block h-6 w-9">
-            <img src="https://www.lordbuddhagroup.com/wp-content/uploads/2018/08/NEW-GIF.gif" alt="" />
-          </span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque.
-          <span className="inline-block h-6 w-9">
-            <img src="https://www.lordbuddhagroup.com/wp-content/uploads/2018/08/NEW-GIF.gif" alt="" />
-          </span>
-        </Marquee>
+      <div className={`p-1 mt-2 mb-2 `}>
+          <Marque/>
       </div>
     </div>
   );
