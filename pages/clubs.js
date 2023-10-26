@@ -27,7 +27,8 @@ const Clubs = ({ clubs }) => {
                 <Zoom>
                     {clubs.map((item, index) => (
                         <Link href={`/clubs/${item._id}`} key={index}>
-                            <div className={styles.clubCard}>
+                        <div className='mx-auto justify-center items-center '>
+                        <div className={styles.clubCard}>
                                 <img
                                     className={styles.clubImage} 
                                     src={urlFor(item.picture[0]).url()}
@@ -35,6 +36,7 @@ const Clubs = ({ clubs }) => {
                                 />
                                 <div className={styles.clubName}>{item.name}</div>
                             </div>
+                        </div>
                         </Link>
                     ))}
                 </Zoom>

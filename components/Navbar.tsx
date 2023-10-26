@@ -11,7 +11,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from "next/image";
 
-import Heading from "./Heading";
+import Heading from "./Heading";  
 
 import styles from "./Navbarr.module.css"; // Create a CSS module for styling
 import React from "react";
@@ -99,7 +99,7 @@ const Navbarr = () => {
                 onMouseEnter={() => handleTabHover("Admissions")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "Admissions" ? styles.active : ""}
-              >
+              > 
                 Admissions
               </Nav.Link>
               <Nav.Link
@@ -151,20 +151,20 @@ const Navbarr = () => {
                 Clubs
               </Nav.Link>
               <Nav.Link
-                href="/placements"
-                onMouseEnter={() => handleTabHover("Placements")}
-                onMouseLeave={handleTabLeave}
-                className={activeTab === "Placements" ? styles.active : ""}
-              >
-                Placements
-              </Nav.Link>
-              <Nav.Link
                 href="/contact"
                 onMouseEnter={() => handleTabHover("Contact Us")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "Contact Us" ? styles.active : ""}
               >
                 Contact Us
+              </Nav.Link>
+              <Nav.Link
+                href="https://placements.iiitl.ac.in/"
+                onMouseEnter={() => handleTabHover("Placements")}
+                onMouseLeave={handleTabLeave}
+                className={activeTab === "Placements" ? styles.active : ""}
+              >
+                Placements
               </Nav.Link>
             </Nav>
             <Form className="d-flex">
