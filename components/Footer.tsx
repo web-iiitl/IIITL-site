@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full sm:w-2/6 p-4 text-white text-center sm:text-left">
-          <Image src="/iiitlLogo.png" alt="Image" width={120} height={160} className="brightness-0 invert mx-auto my-auto" />
+          <Image src="/iiitlLogo.png" alt="Image" width={120} height={160} className="brightness-0 invert" />
           <p>Indian Institute of Information Technology, Lucknow</p>
           <p>R22F+8JR, Chak Ganjaria, C. G. City, Ahmamau, Uttar Pradesh 226002, IN.</p>
         </div>
