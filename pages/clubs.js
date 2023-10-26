@@ -4,7 +4,10 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import Link from 'next/link';
 import Zoom from 'react-reveal/Zoom';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98255d453362d9126f7ee31daf6e0b9e116aa8b6
 import styles from './clubs.module.css';
 
 const Clubs = ({ clubs }) => {
@@ -30,7 +33,7 @@ const Clubs = ({ clubs }) => {
                         <Link href={`/clubs/${item._id}`} key={index}>
                             <div className={styles.clubCard}>
                                 <img
-                                    className={styles.clubImage}
+                                    className={styles.clubImage} 
                                     src={urlFor(item.picture[0]).url()}
                                     alt={`Club ${index + 1}`}
                                 />
@@ -41,8 +44,9 @@ const Clubs = ({ clubs }) => {
                 </Zoom>
             </div>
         </div>
-    )
+    )   
 }
+
 
 export async function getServerSideProps(context) {
     const client = createClient({

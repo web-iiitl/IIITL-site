@@ -1,38 +1,38 @@
 .clubsContainer {
-    padding: 20px;
+  padding: 20px;
 }
 
 .title {
-    margin: 20px 0;
-    color: #333;
+  margin: 20px 0;
+  color: #333;
 }
 
 .clubsGrid {
-    gap: 20px;
+  gap: 20px;
 }
 
 .clubCard {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #fff;
-    transition: transform 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  transition: transform 0.3s;
 }
 
 .clubCard:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .clubImage {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .clubName {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #333;
-    text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
 }
