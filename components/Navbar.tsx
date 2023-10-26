@@ -82,7 +82,7 @@ const Navbarr = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="me-auto my-2 my-lg-0 gap-4"
+              className="me-auto my-2 my-lg-0 gap-3"
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
@@ -166,6 +166,17 @@ const Navbarr = () => {
               >
                 Placements
               </Nav.Link>
+              <NavDropdown title="Careers@IIITL" id="navbarScrollingDropdown"  onMouseEnter={() => handleTabHover("careers@iiitl")}
+                onMouseLeave={handleTabLeave}
+                className={activeTab === "careers@iiitl" ? styles.active : ""}>
+                <NavDropdown.Item href="/careers@iiitl/nonteachingpositions">Non Teaching Positions</NavDropdown.Item>
+                <NavDropdown.Item href="/careers@iiitl/facultyposition">
+                  Faculty Positions
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action5">
+                  Project Vacancy
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav>
             <Form className="d-flex">
               <Form.Control
