@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300;1,600;1,700&family=Lato:ital,wght@1,900&display=swap");
 .clubsContainer {
   padding: 20px;
 }
@@ -5,6 +6,8 @@
 .title {
   margin: 20px 0;
   color: #333;
+  font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lato', sans-serif;
 }
 
 .clubsGrid {
@@ -36,4 +39,6 @@
   font-size: 1.2rem;
   color: #333;
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lato', sans-serif;
 }
