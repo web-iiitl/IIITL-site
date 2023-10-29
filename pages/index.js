@@ -1,26 +1,13 @@
-import Image from "next/image";
-import Navbar from "@/components/Navbar";
 import ControlledCarousel from "@/components/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { SSRProvider } from "react-bootstrap";
-import Footer from "@/components/Footer";
-import Heading from "@/components/Heading";
 import { useState } from "react";
 import Layout from  "@/components/Layout";
-// const Content = () => {
-//   return(
-//       <div className="h-[80vh] flex flex-col justify-center gap-4 px-20">
-//           <div className="flex flex-col gap-2 font-serif lg:text-6xl text-bluel md:text-5xl sm:text-4xl max-sm:text-2xl">
-//               <div className="">VIDYA DADATI VINAYAM,</div>
-//               <div className="">VINAYA DADATI PATRATAM</div>
-//           </div>
-//           <div className="text-2xl max-sm:text-lg text-bluedark">Knowledge gives you discipline, discipline makes you worthy.</div>
-//       </div>
-//   );
-// }
+import Fade from 'react-reveal/Fade';
+
 const About = () => {
   return (
     <div className="relative min-h-[60vh] m-10 max-md:m-5 scrollAnim flex">
+    <Fade left>
       <div className="w-[50%] max-lg:w-[75%] max-sm:w-[90%] max-md:text-xl text-2xl font-normal p-10 gap-10 pr-5">
         <h1>About IIIT Lucknow</h1>
         <p className="text-left text-lg">
@@ -64,24 +51,27 @@ const About = () => {
           </a>
         </div>
       </div>
+      </Fade>
 
       {/* Right side for image and YouTube video */}
+      <Fade right>
       <div className="w-[50%] max-lg:w-[25%] max-sm:w-[20%] self-center relative top-[-10px]">
-        <img
+      <img
           src="\carousel2.jpeg"
           alt="Image"
           width="100%"
           height="auto"
           style={{ filter: "blur(2px)" }}
-        />
-        <iframe
+          />
+          <iframe
           width="70%"
           height="300"
           src="https://www.youtube.com/embed/DmWWqogr_r8?si=dE-4fK_zz1Mvb0-O"
           title="YouTube Video"
           className="absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2"
-        ></iframe>
-      </div>
+          ></iframe>
+          </div>
+      </Fade>
     </div>
   );
 };
