@@ -6,6 +6,7 @@ import { SSRProvider } from "react-bootstrap";
 import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import { useState } from "react";
+import Layout from  "@/components/Layout";
 // const Content = () => {
 //   return(
 //       <div className="h-[80vh] flex flex-col justify-center gap-4 px-20">
@@ -168,13 +169,17 @@ const InfoBoard = ({ title, content }) => {
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <Layout>
       <ControlledCarousel />
       {/* <Content/> */}
       <About />
-      <InfoBoard />
-      <InfoCard />
-      <Footer />
+      {
+        /*
+        <InfoBoard /> */
+      } 
+      {  /*  <InfoCard /> */}
+      </Layout>
+     
     </div>
   );
 }
