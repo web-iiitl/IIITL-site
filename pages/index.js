@@ -36,7 +36,7 @@ const About = () => {
           candidates who qualify in JEE (Mains).
         </p>
         {/* button */}
-        <div>
+        <div className="mt-10">
           <a
             href="#_"
             className="group relative inline-flex items-center justify-center p-3 px-6 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-300 rounded-full shadow-md"
