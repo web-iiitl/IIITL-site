@@ -7,9 +7,9 @@ const myFont = localFont({ src: '../../public/Mukta-Medium.ttf'})
 const index = ({children}) => {
   return (
     <div className={myFont.className}>
-    <div className='bg-white max-w-[2200px] m-auto'>
+    <div className='bg-[#f5f5f5] max-w-[2200px] m-auto'>
         <Navbarr/>
-         <div className='px-10'>
+         <div className=''>
         {children}
          </div>
         <Footer/>
