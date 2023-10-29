@@ -11,15 +11,16 @@ function Head() {
 
   return (
       <div
-      className=" m-4 text-3xl transition text-center justify-center items-center"
+      className=" m-4 text-4xl font-medium transition text-right opacity-60 text-gray-500 leading-snug justify-center items-center"
       style={{
         opacity: 1,
         animation: 'fadeIn 3s ease-in-out',
         
       }}
     >
-      
-      {languages[index]}
+      Indian Insitute of Information Technology, Lucknow
+      <br />
+      भारतीय   सूचना   प्रौद्योगिकी   संस्थान, लखनऊ
     </div>
 
   );

@@ -63,23 +63,22 @@ const Navbarr = () => {
 
   return (
     <div>
-      <div className="p-5 flex justify-items-center items-center">
+      <div className="py-10 px-96 flex justify-between items-center">
         <div>
           <Link href="/">
             <Image
               src='/iiitlLogo.png'
               alt="IIITL"
-              width={200}
+              width={400}
               height={10}
-              style={{width:'100px'}}
+              style={{width:'200px'}}
             />
           </Link>
-          
         </div>
         <Heading />
       </div>
-      <Navbar expand="lg" className="px-2 py-2 bg-gray-100">
-        <Container fluid>
+      <Navbar expand="lg" className="px-2 py-2 bg-[#e6e6e6] text-center">
+        <Container >
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -179,7 +178,7 @@ const Navbarr = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -187,11 +186,11 @@ const Navbarr = () => {
                 aria-label="Search"
               />
               <Button variant="outline-primary">Search</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className={`p-1 mt-2 mb-2 `}>
+      <div className={`p-1  mb-2 `}>
           <Marque/>
       </div>
     </div>

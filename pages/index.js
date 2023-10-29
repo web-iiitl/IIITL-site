@@ -10,11 +10,11 @@ const About = () => {
       <div className="relative min-h-[60vh]    max-md:m-5 scrollAnim flex">
         <Fade left>
           <div className="w-[50%] max-lg:w-[75%] pr-12  max-sm:w-[90%] max-md:text-xl text-2xl font-normal p-10 gap-10 ">
-            <h1 className="text-5xl mb-10">About IIIT Lucknow</h1>
-            <p className="text-left text-xl">
+            <h1 className="text-5xl mb-10 text-bluel font-medium">About IIIT Lucknow</h1>
+            <p className="text-left font-extralight text-xl">
               Indian Institute of Information Technology, Lucknow (IIIT Lucknow) is one of the 20 IIITs being set up by the Central Government in Public Private Partnership (PPP) mode. IIIT Lucknow admitted its first batch of B. Tech. in Information Technology with an intake of 50 students w.e.f. the academic session 2015-16. It currently offers all the amenities ,academic and non-academic to its students that can help them flourish and serve the nation with all their apprehension in the various fields of technology. The admission is made through central counselling of candidates who qualify in JEE (Mains).
             </p>
-            <p className="text-left text-xl">
+            <p className="text-left font-extralight text-xl">
             The Institute is being set up with the financial contributions of MHRD, Govt. of India, Govt. of Uttar Pradesh, and U. P. Electronics Corporation Ltd. as industry partners. The mission of IIIT Lucknow is to be a unique and world class nucleating “Apex Center of Excellence” in the area of Information Technology so as to enhance India’s Technological strength in Information Technology . IIIT seeks to derive its strength from a linkage with sound Indian traditions of centuries past, and sets out to create knowledge-based resources in regional languages.
             </p>
             {/* button */}
@@ -52,18 +52,18 @@ const About = () => {
         <Fade right>
           <div className="w-[50%] max-lg:w-[25%] max-sm:w-[20%] self-center relative top-[-10px]">
             <img
-              src="\carousel2.jpeg"
+              src="https://img.collegepravesh.com/2021/11/IIIT-Lucknow.jpg"
               alt="Image"
               width="100%"
               height="auto"
-              style={{ filter: "blur(2px)" }}
+              style={{ filter: "blur(1px)" }}
             />
             <iframe
               width="70%"
-              height="300"
-              src="https://www.youtube.com/embed/DmWWqogr_r8?si=dE-4fK_zz1Mvb0-O"
+              height="400"
+              src="https://www.youtube.com/embed/Aq-zIMBbWog?si=C2IDlxaOVb_dZPdQ"
               title="YouTube Video"
-              className="absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute translate-y-[-450px] translate-x-[30px] "
             ></iframe>
           </div>
         </Fade>
