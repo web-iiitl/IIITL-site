@@ -6,7 +6,7 @@ const Heading = () => {
   return (
     <div className="animate__bounce">
         <Head className=" text-center justify-center items-center"/>
-        <span className="text-xl float-right animate__zoomOutRight">(An Institute of National Importance by the Act of Parliament)</span>
+        <span className="text-sm float-right animate__zoomOutRight">(An Institute of National Importance by the Act of Parliament)</span>
     </div>
   )
 }

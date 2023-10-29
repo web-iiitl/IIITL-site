@@ -71,6 +71,7 @@ const Navbarr = () => {
               alt="IIITL"
               width={200}
               height={10}
+              style={{width:'100px'}}
             />
           </Link>
           
