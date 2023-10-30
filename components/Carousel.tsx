@@ -110,7 +110,7 @@ import React from 'react'
 
 const Carousel = () => {
   return (
-    <div className="mb-20 cursor-pointer">
+    <div className="mb-20  w-full  m-auto bg-bluel cursor-pointer">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -128,35 +128,24 @@ const Carousel = () => {
         <SwiperSlide>
           <div className="flex items-center justify-center">
             <img
-              src="https://ik.imagekit.io/instaclone/equinox-about_us/6_54pQOPZ6LLA.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1644345116809"
+              src="https://ik.imagekit.io/cmef8hxb6/it3_m0GlC0BYh.png?updatedAt=1698615793014"
               alt="First slide"
-              style={{height:'400px',minWidth:'900px'}}
+              style={{height:'500px',minWidth:'900px'}}
             />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-        <div className="flex items-center justify-center">
-          <img
-            src="https://qph.cf2.quoracdn.net/main-qimg-5cf57aa0bdda4aa841e272c74ba5d2be-lq"
-            alt="Second slide"
-            height={20} width={800}
-            style={{maxWidth:'800px',height:'400px'}}
-          />
+          <div className="flex items-center justify-center">
+            <img
+              src="https://ik.imagekit.io/cmef8hxb6/it1_o_lgch6Bd.png?updatedAt=1698615753254"
+              alt="First slide"
+              style={{height:'500px',minWidth:'900px'}}
+            />
           </div>
         </SwiperSlide>
 
-
-        <SwiperSlide>
-        <div className="flex items-center justify-center">
-          <img
-            src="https://pbs.twimg.com/media/EQkQ7XMU0AEXrp6?format=jpg&name=4096x4096"
-            alt="Third Slide"
-            height={20} width={800}
-            style={{maxWidth:'800px',height:'400px'}}
-          />
-          </div>
-        </SwiperSlide>
+      
 
 
       </Swiper>

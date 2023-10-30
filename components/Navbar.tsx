@@ -1,25 +1,19 @@
 import Link from "next/link";
-import { useRouter } from "next/router"; // Import useRouter
-import Marquee from "react-fast-marquee";
-import Marque from "./Marque";
-import { useState, useEffect } from "react"; // Import useEffect
-import Button from 'react-bootstrap/Button';
+import { useRouter } from "next/router"; 
+import { useState, useEffect } from "react"; 
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from "next/image";
-
 import Heading from "./Heading";  
-
-import styles from "./Navbarr.module.css"; // Create a CSS module for styling
+import styles from "./Navbarr.module.css"; 
 import React from "react";
 
 const Navbarr = () => {
-  const router = useRouter(); // Initialize the router
+  const router = useRouter(); 
 
-  const [activeTab, setActiveTab] = useState("Home"); // Initialize with the default tab name
+  const [activeTab, setActiveTab] = useState("Home"); 
 
   const handleTabHover = (tabName) => {
     setActiveTab(tabName);
@@ -77,12 +71,12 @@ const Navbarr = () => {
         </div>
         <Heading />
       </div>
-      <Navbar expand="lg" className="px-2 py-2 bg-[#e6e6e6] text-center">
+      <Navbar expand="lg" className="px-2 py-4 bg-[#e6e6e6] text-bluel text-xl font-semibold  text-center">
         <Container >
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Collapse >
             <Nav
-              className="me-auto my-2 my-lg-0 gap-3"
+              className="me-auto my-2  my-lg-0 gap-3"
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
@@ -90,6 +84,7 @@ const Navbarr = () => {
                 href="/"
                 onMouseEnter={() => handleTabHover("Home")}
                 onMouseLeave={handleTabLeave}
+                
                 className={activeTab === "Home" ? styles.active : ""}
               >
                 Home
@@ -178,21 +173,11 @@ const Navbarr = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            {/* <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-primary">Search</Button>
-            </Form> */}
+           
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className={`p-1  mb-2 `}>
-          <Marque/>
-      </div>
+    
     </div>
   );
 };

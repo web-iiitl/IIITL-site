@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = ({children}) => {
   return (
-    <div className='px-10 py-5'>
+    <div className='my-10 py-5'>
       {children}
     </div>
   )
