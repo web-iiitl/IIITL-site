@@ -166,7 +166,7 @@ const Navbarr = () => {
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "careers@iiitl" ? styles.active : ""}>
                 <NavDropdown.Item href="/careers/Nonteachingpos">Non Teaching Positions</NavDropdown.Item>
-                <NavDropdown.Item href="/careers@iiitl/facultyposition">
+                <NavDropdown.Item href="/careers/Faculty_pos">
                   Faculty Positions
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action5">
