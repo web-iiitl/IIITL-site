@@ -7,7 +7,7 @@ import Container from "@/components/Containers";
 import { Parallax } from 'react-parallax';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
-
+import NewsSection from "@/components/Newssection";
 const About = () => {
   return (
     <WhiteContainer>
@@ -280,7 +280,7 @@ export default function Home() {
       <About />
       <Statitics />
       <DirectorCorner/>
-
+      <NewsSection/>
 
     </Layout>
 
