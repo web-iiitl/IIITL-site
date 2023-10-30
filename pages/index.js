@@ -8,6 +8,7 @@ import { Parallax } from 'react-parallax';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 import NewsSection from "@/components/Newssection";
+
 const About = () => {
   return (
     <WhiteContainer>
@@ -148,6 +149,7 @@ const InfoBoard = ({ title, content }) => {
 const Statitics = () => {
   return (
     <div>
+      <Fade left>
       <Container>
 
         <Parallax bgImage="https://images.shiksha.com/mediadata/images/1609328511phpF7Rjbe.jpeg" bgImageAlt="the cat" strength={600}>
@@ -210,6 +212,7 @@ const Statitics = () => {
         </Parallax>
 
       </Container>
+      </Fade>
     </div>
   )
 }

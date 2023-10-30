@@ -1,7 +1,10 @@
-import React from 'react';
+
+import Zoom from 'react-reveal/Zoom';
 
 const NewsSection: React.FC = () => {
   return (
+    <>
+    <Zoom>
     <div className="container mx-auto mt-10 p-5">
       <h2 className="text-3xl font-semibold mb-5 items-center">News Section</h2>
       <div className="flex gap-4">
@@ -19,6 +22,8 @@ const NewsSection: React.FC = () => {
         </div>
       </div>
     </div>
+    </Zoom>
+    </>
   );
 };
 
