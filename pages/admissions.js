@@ -5,6 +5,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import Link from 'next/link';
 import PortableText from "react-portable-text"
 import styles from './admissions.module.css'
+import Zoom from 'react-reveal/Zoom';
+
 
 const admissions = ({ admissions,course }) => {
     const client = createClient({
@@ -20,7 +22,7 @@ const admissions = ({ admissions,course }) => {
     return (
         <div>
             <Navbar />
-
+            <Zoom>
             <div className='p-20'>
                 {
                     admissions.map((item, index) => {
@@ -61,8 +63,10 @@ const admissions = ({ admissions,course }) => {
                         )
                     })
                 }
-            </div>
+                  
+            </div></Zoom>
         </div>
+      
     )
 }
 export async function getServerSideProps(context) {
