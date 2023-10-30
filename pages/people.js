@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar'
+import Layout from '../components/Layout'
 import React from 'react'
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
@@ -18,7 +18,7 @@ const people = ({ people, departments }) => {
     console.log(people)
     return (
         <div>
-            <Navbar />
+            <Layout>
 
             <div className='flex w-full min-h-[700px]'>
                 <div className='w-1/4 px-5 py-10 text-center items-center flex flex-col bg-[#375F9B]'>
@@ -77,6 +77,7 @@ const people = ({ people, departments }) => {
                     }
                 </div>
             </div>
+            </Layout>
 
         </div>
     )

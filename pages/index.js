@@ -219,7 +219,7 @@ const Statitics = () => {
 
 const DirectorCorner=()=>{
   return(
-    <div>
+    
     <WhiteContainer>
       <div className="flex justify-between">
       <Fade left>
@@ -272,7 +272,7 @@ const DirectorCorner=()=>{
   </Fade>
       </div>
     </WhiteContainer>
-    </div>
+    
   )
 }
 export default function Home() {
