@@ -10,6 +10,7 @@ import Heading from "./Heading";
 import styles from "./Navbarr.module.css"; 
 import React from "react";
 
+
 const Navbarr = () => {
   const router = useRouter(); 
 
@@ -164,7 +165,7 @@ const Navbarr = () => {
               <NavDropdown title="Careers@IIITL" id="navbarScrollingDropdown"  onMouseEnter={() => handleTabHover("careers@iiitl")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "careers@iiitl" ? styles.active : ""}>
-                <NavDropdown.Item href="/careers@iiitl/nonteachingpositions">Non Teaching Positions</NavDropdown.Item>
+                <NavDropdown.Item href="/careers/Nonteachingpos">Non Teaching Positions</NavDropdown.Item>
                 <NavDropdown.Item href="/careers@iiitl/facultyposition">
                   Faculty Positions
                 </NavDropdown.Item>
