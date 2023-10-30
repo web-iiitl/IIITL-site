@@ -169,7 +169,7 @@ const Navbarr = () => {
                 <NavDropdown.Item href="/careers/Faculty_pos">
                   Faculty Positions
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action5">
+                <NavDropdown.Item href="https://iiitl.ac.in/wp-content/uploads/2023/05/Ramp-project2.pdf">
                   Project Vacancy
                 </NavDropdown.Item>
               </NavDropdown>
