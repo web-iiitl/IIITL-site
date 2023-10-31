@@ -4,13 +4,14 @@ import Footer from '../Footer'
 import localFont from 'next/font/local'
 import Zoom from 'react-reveal/Zoom';
 import Marque from '../Marque';
+import Heading from '../Heading';
 
 const myFont = localFont({ src: '../../public/Mukta-Medium.ttf' })
 const index = ({ children }) => {
   return (
     <div className={myFont.className}>
       <div className='bg-[#f5f5f5] max-w-[2200px] m-auto'>
-      <Marque/>
+      
          
          <Zoom>
         <div className='flex fixed flex-col top-[400px] z-50'>
@@ -36,11 +37,13 @@ const index = ({ children }) => {
           </div>
         </div>
         </Zoom>
+        <Marque/>
+        <Heading/>
         <Navbarr />
         <div className=''>
           {children}
         </div>
-        <Footer />
+        <Footer/>
       </div>
     </div>
   )
