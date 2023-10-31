@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar'
+import Layout from "../components/Layout";
 import React from 'react'
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
@@ -18,8 +18,9 @@ const Clubs = ({ clubs }) => {
     }
 
     return (
+        <Layout>
         <div className={styles.clubsContainer}>
-            <Navbar />
+            
             <h1 className={`${styles.title} text-3xl mx-auto px-10 justify-center items-center text-center`}>
                 Life at IIIT - Lucknow
             </h1>
@@ -42,6 +43,7 @@ const Clubs = ({ clubs }) => {
                 </Zoom>
             </div>
         </div>
+        </Layout>
     )   
 }
 

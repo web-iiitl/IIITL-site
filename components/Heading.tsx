@@ -12,13 +12,13 @@ const Heading = () => {
             <Image
               src='/iiitlLogo.png'
               alt="IIITL"
+              layout="responsive"
               width={300}
               height={10}
             />
           </Link>
         </div>
-        <Head className={undefined}/>
-        {/* <span className=" float-right animate__zoomOutRight  text-gray-500 ">(An Institute of National Importance by the Act of Parliament)</span> */}
+        <Head />
     </div>
   )
 }
