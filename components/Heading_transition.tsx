@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Head() {
+function Head({className}) {
   const [languages, setLanguages] = useState([
     'Indian Insitute of Information Technology, Lucknow',
     'भारतीय   सूचना   प्रौद्योगिकी   संस्थान, लखनऊ' ,

@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar'
+import Navbar from '../../components/Navbar'
 import React from 'react'
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";

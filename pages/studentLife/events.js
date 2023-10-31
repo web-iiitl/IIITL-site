@@ -2,7 +2,7 @@ import React from 'react'
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { useRouter } from 'next/router'
-import Navbar from '@/components/Navbar';
+import Navbar from '../../components/Navbar';
 import Link from 'next/link';
 import Zoom from 'react-reveal/Zoom';
 

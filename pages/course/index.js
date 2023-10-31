@@ -4,7 +4,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import Link from 'next/link';
 import PortableText from "react-portable-text"
 import { useRouter } from 'next/router'
-import Navbar from '@/components/Navbar'
+import Navbar from '../../components/Navbar'
 
 const index = ({course,admissions}) => {
     const router = useRouter()

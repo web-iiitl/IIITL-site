@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import { useHeadsObserver } from "../hooks/hooks";
+
 
 type Props= {
   children: string | JSX.Element | JSX.Element[]
@@ -12,7 +12,7 @@ type Heading = {
 }
 export default function TableOfContents({ children }:Props) {
   const [headings, setHeadings] = useState<Heading[]>([]);
-  const { activeId } = useHeadsObserver();
+  const activeId='/' 
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll("h2")).map(
       (elem) => ({
@@ -67,9 +67,7 @@ export default function TableOfContents({ children }:Props) {
               );
             }
           })}
-          {/* <li className="text-center text-2xl font-medium  py-6 bg-lightbg text-bluedark">
-          <a href="#">Selected</a>
-        </li> */}
+         
         </ul>
       </div>
     </>

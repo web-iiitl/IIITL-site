@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Navbarr from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "../../components/Layout";
 
 const FacultyPos = () => {
   return (
     <>
-    <Navbarr/>
+    <Layout>
+
     <div className="container mx-auto mt-10 p-5">
       <h2 className="text-2xl font-semibold mb-5">Faculty Positions</h2>
       <ul className="list-disc ml-6 space-y-2">
@@ -76,7 +76,8 @@ const FacultyPos = () => {
             </a> </li>
     </ul>
     </div>
-    <Footer/>
+  
+    </Layout>
     </>
   );
 }

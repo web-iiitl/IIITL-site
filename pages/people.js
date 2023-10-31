@@ -77,7 +77,7 @@ const people = ({ people, departments }) => {
                     }
                 </div>
             </div>
-            </Layout>
+            </Layout>   
 
         </div>
     )
