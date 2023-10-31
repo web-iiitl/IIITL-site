@@ -1,6 +1,6 @@
 import ControlledCarousel from "../components/Carousel";
 import { useState } from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/index";
 import Fade from 'react-reveal/Fade';
 import WhiteContainer from "../components/Containers/whiteContainer";
 import Container from "../components/Containers";
