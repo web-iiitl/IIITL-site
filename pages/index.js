@@ -221,57 +221,56 @@ const DirectorCorner=()=>{
   return(
     
     <WhiteContainer>
-      <div className="flex justify-between">
+    <div className="flex flex-col sm:flex-row justify-between">
       <Fade left>
-      <div className="w-[50%] max-lg:w-[75%] pr-12  max-sm:w-[90%] max-md:text-xl text-2xl font-normal p-10 gap-10 ">
-        <h1 className="text-5xl mb-10 text-bluel font-medium">DIRECTOR'S CORNER</h1>
-       
-        <p className="text-left font-extralight text-xl">
-        Welcome to the Indian Institute of Information Technology, Lucknow, an institute of national importance. IIITs have a tradition of producing best-in-class human resources in IT and connecting multi-dimensional aspects of IT such as manufacturing, design, and management.
-        </p>
-        
-        <div className="mt-10">
-          <a
-            href="#_"
-            className="group relative inline-flex items-center justify-center p-3 px-6 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-300 rounded-full shadow-md"
-          >
-            <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-500 group-hover:translate-x-0 ease">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </span>
-            <span className="absolute flex items-center justify-center w-full h-full text-blue-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-              Read More
-            </span>
-            <span className="relative invisible">Read More</span>
-          </a>
-        </div>
-      </div>
-    </Fade>
-    <Fade right>
-    <div className="w-[50%]">
-    <img
-    src="https://iiitl.ac.in/wp-content/uploads/2020/07/canvas-resize-1.png"
-    alt="Image"
+        <div className="w-full sm:w-[50%] max-lg:w-[75%] max-sm:w-[90%] max-md:text-xl text-2xl font-normal p-4 sm:p-10 gap-4 sm:gap-10 mb-4 sm:mb-0">
+          <h1 className="text-5xl mb-4 sm:mb-10 text-bluel font-medium">DIRECTOR'S CORNER</h1>
   
-    height="auto"
-    style={{ filter: "blur(1px)" }}
-    />
+          <p className="text-left font-extralight text-xl">
+            Welcome to the Indian Institute of Information Technology, Lucknow, an institute of national importance. IIITs have a tradition of producing best-in-class human resources in IT and connecting multi-dimensional aspects of IT such as manufacturing, design, and management.
+          </p>
+  
+          <div className="mt-4 sm:mt-10">
+            <a
+              href="#_"
+              className="group relative inline-flex items-center justify-center p-3 px-6 py-2 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-300 rounded-full shadow-md"
+            >
+              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-500 group-hover:translate-x-0 ease">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </span>
+              <span className="absolute flex items-center justify-center w-full h-full text-blue-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                Read More
+              </span>
+              <span className="relative invisible">Read More</span>
+            </a>
+          </div>
+        </div>
+      </Fade>
+      <Fade right>
+        <div className="w-full sm:w-[50%] mb-4 sm:mb-0">
+          <img
+            src="https://iiitl.ac.in/wp-content/uploads/2020/07/canvas-resize-1.png"
+            alt="Image"
+            height="auto"
+            style={{ filter: "blur(1px)" }}
+          />
+        </div>
+      </Fade>
     </div>
-  </Fade>
-      </div>
-    </WhiteContainer>
+  </WhiteContainer>
     
   )
 }
