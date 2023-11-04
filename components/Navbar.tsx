@@ -151,7 +151,7 @@ const Navbarr = () => {
               <NavDropdown title="Careers@IIITL" id="navbarScrollingDropdown"  onMouseEnter={() => handleTabHover("careers@iiitl")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "careers@iiitl" ? styles.active : ""}>
-                <NavDropdown.Item href="/careers/Nonteachingpos">Non Teaching Positions</NavDropdown.Item>
+                <NavDropdown.Item href="/careers/Nonteach_pos">Non Teaching Positions</NavDropdown.Item>
                 <NavDropdown.Item href="/careers/Faculty_pos">
                   Faculty Positions
                 </NavDropdown.Item>
