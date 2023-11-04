@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }) {
      
         <Head>
           <link rel="icon" href="/iiitlLogo.png" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Indian Institute of Information Technology, Lucknow</title>
         </Head>
         <Component {...pageProps} />
