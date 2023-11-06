@@ -9,6 +9,7 @@ const FacultyPos = () => {
           <h2 className="text-5xl font-extrabold  mb-5">Faculty Positions</h2>
           <ul className="list-disc ml-6 space-y-2">
             <li>
+              
               <Link legacyBehavior href="/">
                 <a className="text-green-600 hover:text-green-700">
                   Advertisement for Walk-In-Interview for the Adhoc Faculty CS/IT
