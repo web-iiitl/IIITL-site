@@ -29,7 +29,7 @@ const admissions = ({ admissions, course }) => {
                     {item.title}
                   </h1>
                   <div class="text-center mt-8">
-                    <h2 class="text-2xl font-semibold text-cyan-700 relative">
+                  <h2 class="text-2xl font-semibold text-cyan-700 relative">
                       <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/4 h-0.5 bg-cyan-800">
                         <span class="w-8 h-8 bg-white border-2 border-cyan-800 rounded-full absolute top-0 transform -translate-y-1/2 left-1/2 -translate-x-1/2"></span>
                       </span>
