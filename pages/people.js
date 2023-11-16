@@ -38,7 +38,7 @@ const people = ({ people, departments }) => {
                 {item?.people?.map((it, ind) => (
                   <div key={it}>
                     <h1 className='text-2xl my-4 border-b-2 border-slate-400'>{it.SubDepartment}</h1>
-                    <div className='grid grid-flow-row md:grid-cols-3 gap-10'>
+                    <div className='grid grid-flow-row md:grid-cols-5 gap-3'>
                       {it.people?.map((ct, num) => (
                         <div key={num}>
                           {people.map((wm, wt) => {
