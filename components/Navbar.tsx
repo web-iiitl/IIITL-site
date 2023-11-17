@@ -92,18 +92,7 @@ const Navbarr = () => {
               >
                 People
               </Nav.Link>
-              <NavDropdown title="Student Life" id="navbarScrollingDropdown"  onMouseEnter={() => handleTabHover("studentLife")}
-                onMouseLeave={handleTabLeave}
-                className={activeTab === "studentLife" ? styles.active : ""}>
-                <NavDropdown.Item href="/studentLife/events">Events</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
+              
               <NavDropdown title="Courses" id="navbarScrollingDropdown" onMouseEnter={() => handleTabHover("Courses")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "Courses" ? styles.active : ""}>
