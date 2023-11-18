@@ -150,10 +150,10 @@ const Navbarr = () => {
               </NavDropdown>
               <Nav.Link
                 href="/"
-                onMouseEnter={() => handleTabHover("Home")}
+                onMouseEnter={() => handleTabHover("Additional")}
                 onMouseLeave={handleTabLeave}
                 
-                className={activeTab === "Home" ? styles.active : ""}
+                className={activeTab === "Additional" }
               >
                 Additional
               </Nav.Link>
