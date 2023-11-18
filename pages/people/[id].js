@@ -42,12 +42,12 @@ const people = ({ people }) => {
                       className="py-4 bg-[#426ca9] text-white hover:font-black w-full font-medium text-2xl  my-5 shadow-sm hover:scale-105 rounded-md duration-300"
                     >
                       <Link
-                        to={ind}
+                        to={item.title}
                         activeClass="active"
                         spy={true}
                         smooth={true}
-                        offset={50}
-                        duration={100}
+                        offset={-60}
+                        duration={70}
                         className="text-inherit no-underline"
                       >
                         {item.title}
@@ -59,7 +59,7 @@ const people = ({ people }) => {
               <div className="p-2">
                 {it.qualifications.map((item, ind) => {
                   return (
-                    <div key={ind} id={ind}>
+                    <div key={ind} id={item.title}>
                       <h2 className="font-serif lg:text-3xl text-bluel md:text-5xl px-10 pt-5 sm:text-4xl max-sm:text-2xl border-b-2 border-gray-400 font-semibold">
                         {item.title}
                       </h2>
