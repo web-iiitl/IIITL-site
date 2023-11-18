@@ -36,7 +36,7 @@ const people = ({ people, departments }) => {
                         {it.SubDepartment}
                       </h1>
 
-                      <div className="grid grid-flow-row md:grid-cols-5 gap-5">
+                      <div className="grid grid-flow-row md:grid-cols-4 gap-3">
                         {it.people?.map((ct, num) => (
                           <div key={num}>
                             {people.map((wm, wt) => {
@@ -75,7 +75,7 @@ const people = ({ people, departments }) => {
                         {it.SubDepartment}
                       </h1>
 
-                      <div className="grid grid-flow-row md:grid-cols-5 gap-5">
+                      <div className="grid grid-flow-row md:grid-cols-4 gap-3">
                         {it.people?.map((ct, num) => (
                           <div key={num}>
                             {people.map((wm, wt) => {
