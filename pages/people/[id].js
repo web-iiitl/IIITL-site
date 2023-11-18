@@ -48,6 +48,7 @@ const people = ({ people }) => {
                         smooth={true}
                         offset={50}
                         duration={100}
+                        className="text-inherit no-underline"
                       >
                         {item.title}
                       </Link>
