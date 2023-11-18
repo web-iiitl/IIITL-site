@@ -20,16 +20,6 @@ const people = ({ people, departments }) => {
     <div>
       <Layout>
         <div className='flex flex-wrap min-h-[700px]'>
-          <div className='w-full md:w-1/4 px-5 py-10 text-center items-center flex flex-col bg-[#375F9B]'>
-            <h1 className='text-4xl mb-10 text-white font-semibold border-b-2'>
-              People
-            </h1>
-            {departments.map((item, index) => (
-              <div className='my-12' key={index}>
-                <h1 className='text-3xl text-white'>{item.name}</h1>
-              </div>
-            ))}
-          </div>
 
           <div className='w-50 m-auto md:w-3/4 px-10'>
             {departments.map((item, index) => (
