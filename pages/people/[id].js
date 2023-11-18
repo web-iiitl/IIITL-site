@@ -33,8 +33,10 @@ const people = ({ people }) => {
                   alt=""
                 />
                 <h2 className="my-3 mb-10 text-2xl text-white font-semibold">
-                  {it.post}
+                  {`${it.name}`}
+                  
                 </h2>
+                <span className="text-white text-xl font-medium">{`(${it.post})`}</span>
                 {it.qualifications.map((item, ind) => {
                   return (
                     <button
