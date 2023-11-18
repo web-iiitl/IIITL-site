@@ -35,7 +35,7 @@ const admissions = ({ admissions, course }) => {
                       </span>
                     </h2>
                   </div>
-                  <PortableText content={item.content} serializers={{}} />
+                  <PortableText className="text-center p-2 text-2xl" content={item.content} serializers={{}} />
                   <h2 className="my-5 text-2xl font-semibold text-cyan-700 border-b-2 border-cyan-800 text-center">
                     Courses
                   </h2>
