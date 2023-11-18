@@ -152,8 +152,6 @@ const Navbarr = () => {
                 href="/"
                 onMouseEnter={() => handleTabHover("Additional")}
                 onMouseLeave={handleTabLeave}
-                
-                className={activeTab === "Additional" }
               >
                 Additional
               </Nav.Link>
