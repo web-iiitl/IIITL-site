@@ -11,7 +11,7 @@ function Head() {
 
   return (
       <div
-      className="m-4 text-xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-medium text-right opacity-60 text-gray-500 leading-snug justify-center items-center"
+      className="m-4 text-xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl  font-medium text-right opacity-60 text-gray-500 leading-snug justify-center items-center"
       style={{
         opacity: 1,
         animation: 'fadeIn 3s ease-in-out',

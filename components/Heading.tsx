@@ -13,7 +13,7 @@ const Heading = () => {
               src='/iiitlLogo.png'
               alt="IIITL"
               layout="responsive"
-              width={300}
+              width={200}
               height={10}
             />
           </Link>
