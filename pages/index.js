@@ -1,5 +1,5 @@
 import ControlledCarousel from "../components/Carousel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout/index";
 import Fade from 'react-reveal/Fade';
 import WhiteContainer from "../components/Containers/whiteContainer";
@@ -10,7 +10,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 import Zoom from 'react-reveal/Zoom';
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
-
 
 
 
@@ -78,80 +77,11 @@ const About = () => {
     </WhiteContainer>
   );
 };
-const InfoCard = ({ title, content }) => {
-  return (
-    <div className="relative m-10 max-md:m-5 scrollAnim">
-      <div className="bg-gray-200 z-[-1] py-12">
-        <div className="flex flex-row justify-center space-x-10">
-          <div className="w-[28%] h-[60vh] max-lg:w-[30%] max-sm:w-[30%] max-md:text-xl flex flex-col text-center text-2xl font-normal bg-bluel text-white p-10 gap-10 transform hover:scale-110 transition-transform py-0 px-0 hover:border border-bluedark hover:shadow-lg">
-            <p className="bg-white text-bluedark font-bold h-12 py-2">
-              {title}
-            </p>
-            <p className="">{content}</p>
-          </div>
-          <div className="w-[28%] h-[60vh] max-lg:w-[30%] max-sm:w-[30%] max-md:text-xl flex flex-col text-center text-2xl font-normal bg-bluel text-white p-10 gap-10 transform hover:scale-110 transition-transform py-0 px-0 hover:border border-bluedark hover:shadow-lg">
-            <p className="bg-white text-bluedark font-bold h-12 py-2">
-              {title}
-            </p>
-            <p className="">{content}</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const InfoBoard = ({ title, content }) => {
-  const [selectedContent, setSelectedContent] = useState(null);
-
-  const handleButtonClick = (content) => {
-    setSelectedContent(content);
-  };
-
-  return (
-    <div className="relative m-10 max-md:m-5 scrollAnim">
-      <div className="bg-white z-[-1] py-3">
-        <div className="flex flex-row justify-center space-x-10">
-          <div className="w-[59%] h-[60vh] max-lg:w-[30%] max-sm:w-[30%] max-md:text-xl flex flex-col text-center text-2xl font-normal bg-bluel text-white p-10 gap-10 py-0 px-0 hover:border border-bluedark hover:shadow-lg transform hover:scale-105 transition-transform">
-            <div className="flex justify-between">
-              <button
-                className="bg-gray-200 text-bluedark font-bold h-12 w-[25%] py-2 mx-2 my-2 transform hover:scale-105 transition-transform hover:border border-bluedark hover:shadow-lg"
-                onClick={() => handleButtonClick("-")}
-              >
-                -
-              </button>
-              <button
-                className="bg-gray-200 text-bluedark font-bold h-12 w-[25%] py-2 mx-2 my-2 transform hover:scale-105 transition-transform hover:border border-bluedark hover:shadow-lg"
-                onClick={() => handleButtonClick("--")}
-              >
-                --
-              </button>
-              <button
-                className="bg-gray-200 text-bluedark font-bold h-12 w-[25%] py-2 mx-2 my-2 transform hover:scale-105 transition-transform hover:border border-bluedark hover:shadow-lg"
-                onClick={() => handleButtonClick("---")}
-              >
-                ---
-              </button>
-              <button
-                className="bg-gray-200 text-bluedark font-bold h-12 w-[25%] py-2 mx-2 my-2 transform hover:scale-105 transition-transform hover:border border-bluedark hover:shadow-lg"
-                onClick={() => handleButtonClick("----")}
-              >
-                ----
-              </button>
-            </div>
-            {selectedContent && <p>{selectedContent}</p>}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 
 
 
-const Statitics = () => {
+const Statistics = () => {
   return (
     <div>
       <Fade left>
@@ -222,7 +152,7 @@ const Statitics = () => {
   )
 }
 
-const DirectorCorner = () => {
+const DirectorsCorner = () => {
   return (
 
     <WhiteContainer>
@@ -408,14 +338,57 @@ const NewsSection = ({ news, annoucements }) => {
 };
 
 const Home = ({ news, annoucements }) => {
+  const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    const handleSectionScroll = () => {
+      const scrollTop = document.getElementById(activeSection).scrollTop; 
+      const height = document.getElementById(activeSection).clientHeight;
+      const scrollRatio = scrollTop / (height * 0.4);
+
+      if(scrollRatio >= 1) {
+        let nextSection;
+        switch(activeSection) {
+          case "about": 
+            nextSection = "statistics";
+            break;
+          case "statistics":
+            nextSection = "directorsCorner";
+            break;
+          // ... and so on for other sections
+        }
+
+        document.getElementById(nextSection)
+          .scrollIntoView();
+        
+        setActiveSection(nextSection); 
+      }
+    };
+
+    document.getElementById(activeSection)
+      .addEventListener("scroll", handleSectionScroll);
+
+    return () => {      
+      document.getElementById(activeSection)
+        .removeEventListener("scroll", handleSectionScroll);
+    }
+  }, [activeSection]);
 
   return (
 
-    <Layout>
+    <Layout style={{overflowY: "scroll"}}>
       <ControlledCarousel />
-      <About />
-      <Statitics />
-      <DirectorCorner />
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="statistics">  
+        <Statistics />
+      </div>
+      
+      <div id="directorsCorner">
+        <DirectorsCorner />
+      </div>
       <NewsSection news={news} annoucements={annoucements} />
     </Layout>
 
