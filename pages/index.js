@@ -9,6 +9,7 @@ import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 import Zoom from 'react-reveal/Zoom';
 import { createClient } from "next-sanity";
+import HomeClub from '../components/home_club'
 import imageUrlBuilder from "@sanity/image-url";
 
 
@@ -416,6 +417,7 @@ const Home = ({ news, annoucements }) => {
       <About />
       <Statitics />
       <DirectorCorner />
+      <HomeClub/>
       <NewsSection news={news} annoucements={annoucements} />
     </Layout>
 
