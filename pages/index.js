@@ -339,49 +339,15 @@ const NewsSection = ({ news, annoucements }) => {
 };
 
 const Home = ({ news, annoucements }) => {
-  const [activeSection, setActiveSection] = useState("about");
 
-  useEffect(() => {
-    const handleSectionScroll = () => {
-      const scrollTop = document.getElementById(activeSection).scrollTop; 
-      const height = document.getElementById(activeSection).clientHeight;
-      const scrollRatio = scrollTop / (height * 0.4);
-
-      if(scrollRatio >= 1) {
-        let nextSection;
-        switch(activeSection) {
-          case "about": 
-            nextSection = "statistics";
-            break;
-          case "statistics":
-            nextSection = "directorsCorner";
-            break;
-          // ... and so on for other sections
-        }
-
-        document.getElementById(nextSection)
-          .scrollIntoView();
-        
-        setActiveSection(nextSection); 
-      }
-    };
-
-    document.getElementById(activeSection)
-      .addEventListener("scroll", handleSectionScroll);
-
-    return () => {      
-      document.getElementById(activeSection)
-        .removeEventListener("scroll", handleSectionScroll);
-    }
-  }, [activeSection]);
 
   return (
 
     <Layout style={{overflowY: "scroll"}}>
       <ControlledCarousel />
       <About />
-      <Statitics />
-      <DirectorCorner />
+      <Statistics />
+      <DirectorsCorner />
       <HomeClub/>
       <NewsSection news={news} annoucements={annoucements} />
     </Layout>
