@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar';
 import Link from 'next/link';
 import Zoom from 'react-reveal/Zoom';
+import Layout from '../../components/Layout/index'
 
 const Clubs = ({ clubs, events }) => {
   const router = useRouter()
@@ -22,29 +23,30 @@ const Clubs = ({ clubs, events }) => {
   }
   console.log(clubs,events)
   return (
+    <Layout>
     <div>
-      <Navbar />
-     
       {
         clubs.map((item, index) => {
           if (item._id == id) {
             return (
-              
               <div className='px-20' key={index}>
                <Zoom>
-               <h1 className='text-3xl  my-6'>About {item.name}</h1>
-               <div className='grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-x-20'>
-               <h3 >About {item.description}</h3>
-               <img className="inline-block   " src={urlFor(item.picture[0]).url()} />
+               <h1 className='text-7xl p-3 mt-9 font-extrabold text-bluel my-6'>About {item.name}</h1>
+               <div className='flex '>
+                  <div className='flex-1 py-5 font-extralight text-justify'>
+                    <p className=' text-4xl m-4 '>{item.description}</p>
+                  </div>
+                  <div className='flex-1 m-4' >
+                    <img className="w-full h-full object-cover" src={urlFor(item.picture[0]).url()} />
+                  </div>
                </div>
                </Zoom>
                 <Zoom>
                 {
                   <div className=''>
-                    <h1 className='text-3xl  my-6'>Events</h1>
+                    <h1 className='text-3xl my-6'>Events</h1>
                     {
                       item.clubEvents?.map((it, ind) => {
-
                         return (
                           <div>
                             {
@@ -53,7 +55,7 @@ const Clubs = ({ clubs, events }) => {
                                   return (
                                     <div key={i} className="cursor-pointer">
                                     <Link href={'/collegeevents/' +ct._id}>
-                                    <img className="inline-block   " src={urlFor(ct.picture[0]).url()} />
+                                    <img className="inline-block" src={urlFor(ct.picture[0]).url()} />
                                     </Link>
                                     </div>
                                   )
@@ -62,22 +64,38 @@ const Clubs = ({ clubs, events }) => {
                             }
                             </div>
                             )
-                            
                           })
-                          
                         }
                         </div>
                       }
                       </Zoom>
-
+                      
+              <div className='mt-5'>
+                  <h1 className='text-7xl p-3 font-extrabold text-bluel '>People</h1>
+                  <div className='flex'>
+                    <div className='flex-1'>
+                      <h1 className='text-5xl p-3 font-extrabold text-bluel my-6'>Co-ordinators</h1>
+                      <div className='flex '>
+                        <div className="flex-1">
+                          <img className="" src={urlFor(item.picture[0]).url()} />
+                        </div>
+                        <div className="flex-1">
+                          <img className="" src={urlFor(item.picture[0]).url()} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className='flex-1 border-l-4 border-black'>
+                      {/* Additional content for the right side if needed */}
+                    </div>
+                  </div>
+                </div>
               </div>
             )
           }
         })
       }
-
-
     </div>
+    </Layout>
   )
 }
 

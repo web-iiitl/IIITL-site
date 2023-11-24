@@ -159,7 +159,7 @@ const DirectorsCorner = () => {
     <WhiteContainer>
       <div className="flex flex-col sm:flex-row justify-between">
         <Fade left>
-          <div className="w-full sm:w-[50%] max-lg:w-[75%] max-sm:w-[90%] max-md:text-xl text-2xl font-normal p-4 sm:p-10 gap-4 sm:gap-10 mb-4 sm:mb-0">
+          <div className="w-full sm:w-[50%] max-lg:w-[75%] max-sm:w-[90%] max-md:text-xl text-2xl font-normal p-4 sm:p-10 gap-4 sm:gap-10 mb-4 sm:mb-0 flex-1">
             <h1 className="text-5xl mb-4 sm:mb-10 text-bluel font-medium">DIRECTOR'S CORNER</h1>
 
             <p className="text-left font-extralight text-xl">
@@ -198,7 +198,7 @@ const DirectorsCorner = () => {
           </div>
         </Fade>
         <Fade right>
-          <div className="w-full sm:w-[50%] mb-4 sm:mb-0">
+          <div className="flex-1 w-full sm:w-[50%] mb-4 sm:mb-0">
             <img
               src="https://iiitl.ac.in/wp-content/uploads/2020/07/canvas-resize-1.png"
               alt="Image"
