@@ -1,36 +1,41 @@
 import Zoom from "react-reveal/Zoom";
+import { createClient } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import Container from "./Containers/index";
+const HomeClub: React.FC = ({ clubs }: any) => {
+  console.log(clubs)
+  const client = createClient({
+    projectId: process.env.NEXT_PUBLIC_CLUB_ID,
+    dataset: "production",
+  });
+  const builder = imageUrlBuilder(client);
 
-const HomeClub: React.FC = () => {
+  function urlFor(source) {
+    return builder.image(source);
+  }
   return (
-    <>
+    <Container>
       <Zoom>
-        <div className="container mx-auto mt-10 p-5">
-          <h2 className="text-3xl font-semibold mb-5 items-center">
-            Clubs
-          </h2>
-          <div className="flex gap-4 py-3">
-            {/* Original divs line 1*/}
-            <div className="w-1/3 p-10 bg-white rounded-lg shadow-lg h-[300px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/3 p-10 bg-white rounded-lg shadow-lg h-[300px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/3 p-10 bg-white rounded-lg shadow-lg h-[300px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/3 p-10 bg-white rounded-lg shadow-lg h-[300px] transform transition-transform hover:scale-110"></div>
+        <div className="container mx-auto mt-10 ">
+
+          <h1 className="text-5xl mb-4 sm:mb-10 text-bluel font-medium">Student Life</h1>
+          <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-4  gap-10  py-3">
+
+            {
+              clubs?.map((item, index) => {
+                return (
+                  <div>
+                    <a href={"/clubs/"+item._id}>
+                    <img className="cursor-pointer  rounded-lg shadow-lg h-[220px] w-[250px] transform transition-transform hover:scale-110" src={urlFor(item.picture[0]).url()} alt="" />
+                    </a>
+                  </div>
+                )
+              })
+            }
           </div>
-          {/* code for line 2 */}
-          <div className="flex gap-4 flex-row align-middle items-center justify-center p-3">
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-          </div>
-          {/* code for line 3 */}
-           <div className="flex gap-4 flex-row align-middle items-center justify-center p-3">
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-            <div className="w-1/4 p-10 bg-white rounded-lg shadow-lg h-[200px] transform transition-transform hover:scale-110"></div>
-          </div>
-        </div>
+         </div>
       </Zoom>
-    </>
+    </Container>
   );
 };
 

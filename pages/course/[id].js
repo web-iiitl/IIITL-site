@@ -5,6 +5,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import Link from 'next/link';
 import PortableText from "react-portable-text"
 import { useRouter } from 'next/router'
+import Layout from '../../components/Layout/index'
 
 const course = ({admissions,course}) => {
     const router = useRouter()
@@ -22,7 +23,7 @@ const course = ({admissions,course}) => {
 
   return (
     <div>
-      <Navbar/>
+      <Layout>
       <div className='p-20'>
       {
           course.map((item,ind)=>{
@@ -42,7 +43,7 @@ const course = ({admissions,course}) => {
         }
      </div>
        
-
+     </Layout>
     </div>
   )
 }

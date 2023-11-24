@@ -6,7 +6,8 @@ import Zoom from 'react-reveal/Zoom';
 import Marque from '../Marque';
 import Heading from '../Heading';
 
-const myFont = localFont({ src: '../../public/Mukta-Medium.ttf' })
+const myFont = localFont({ src: '../../public/Poppins-Regular.ttf' })
+
 const index = ({ children }) => {
   return (
     <div className={myFont.className}>

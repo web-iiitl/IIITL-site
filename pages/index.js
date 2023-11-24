@@ -215,7 +215,7 @@ const DirectorsCorner = () => {
 
 
 const NewsSection = ({ news, annoucements }) => {
-  console.log(annoucements)
+ 
   const client = createClient({
     projectId: "bdnunqwq",
     dataset: "production",
@@ -338,9 +338,9 @@ const NewsSection = ({ news, annoucements }) => {
   );
 };
 
-const Home = ({ news, annoucements }) => {
+const Home = ({ news, annoucements,clubs }) => {
 
-
+  
   return (
 
     <Layout style={{overflowY: "scroll"}}>
@@ -348,7 +348,7 @@ const Home = ({ news, annoucements }) => {
       <About />
       <Statistics />
       <DirectorsCorner />
-      <HomeClub/>
+      <HomeClub clubs={clubs} />
       <NewsSection news={news} annoucements={annoucements} />
     </Layout>
 
@@ -360,14 +360,22 @@ export async function getServerSideProps(context) {
     dataset: "production",
 
   });
+  const client2 = createClient({
+    projectId: "msx6zvjg",
+    dataset: "production",
+  });
   const query = `*[_type == "news"]`;
   const query2 = `*[_type == "annoucements"]`;
   const news = await client.fetch(query);
   const annoucements = await client.fetch(query2);
 
+  const query3 = `*[_type == "clubs"]`;
+  const clubs = await client2.fetch(query3);
+
+
   return {
     props: {
-      news, annoucements
+      news, annoucements,clubs
     },
   };
 }
