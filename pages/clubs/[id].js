@@ -101,14 +101,17 @@ const Clubs = ({ clubs, events }) => {
                       </div>
                     </div>
                     <div className="flex-1 border-l-4 border-black">
-                      <h1 className="text-5xl p-3 font-extrabold text-bluel my-6">
+                      <h1 className="text-5xl p-6 font-extrabold text-bluel my-6">
                         Executives
                       </h1>
+                      <div className="text-center items-center justify-center ">
                       {Array(10).fill("Name of the person").map((name, index) => (
-                        <div key={index} className="text-xl my-2">
+                        <div key={index} className="text-2xl m-5">
                           {name}
                         </div>
                       ))}
+                      </div>
+                      
                     </div>
                   </div>
                 </div>
