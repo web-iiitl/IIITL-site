@@ -21,10 +21,10 @@ const Clubs = ({ clubs }) => {
         <Layout>
         <div className={styles.clubsContainer}>
             
-            <h1 className={`${styles.title} text-3xl mx-auto px-10 justify-center items-center text-center`}>
+            <h1 className={`${styles.title} text-5xl mt- mx-auto px-10 justify-center items-center text-center`}>
                 Life at IIIT - Lucknow
             </h1>
-            <div className={`grid grid-flow-row grid-cols-1 sm:grid-cols-3 ${styles.clubsGrid}`}>
+            <div className={`grid grid-flow-row grid-cols-1  sm:grid-cols-3 ${styles.clubsGrid}`}>
                 <Zoom>
                     {clubs.map((item, index) => (
                         <Link href={`/clubs/${item._id}`} key={index}>
@@ -35,7 +35,8 @@ const Clubs = ({ clubs }) => {
                                     src={urlFor(item.picture[0]).url()}
                                     alt={`Club ${index + 1}`}
                                 />
-                                <div className={styles.clubName}>{item.name}</div>
+                                <div className={`${styles.clubName}`}>{item.name}</div>
+
                             </div>
                         </div>
                         </Link>
