@@ -19,31 +19,32 @@ const Clubs = ({ clubs }) => {
 
     return (
         <Layout>
-        <div className={styles.clubsContainer}>
-            
-            <h1 className={`${styles.title} text-5xl pt-2 mx-auto px-10 justify-center items-center text-center`}>
-                Life at IIIT - Lucknow
-            </h1>
-            <div className={`grid grid-flow-row grid-cols-1 gap-5 sm:grid-cols-3 p-5 ${styles.clubsGrid}`}>
-                <Zoom>
-                    {clubs.map((item, index) => (
-                        <Link href={`/clubs/${item._id}`} key={index}>
-                        <div className='mx-auto justify-center items-center '>
-                        <div className={styles.clubCard}>
-                                <img
-                                    className={styles.clubImage} 
-                                    src={urlFor(item.picture[0]).url()}
-                                    alt={`Club ${index + 1}`}
-                                />
-                                <div className={`${styles.clubName}`}>{item.name}</div>
-
-                            </div>
-                        </div>
-                        </Link>
-                    ))}
-                </Zoom>
+            <div className={styles.clubsContainer}>
+                
+                <h1 className={`${styles.title} text-5xl pt-2 mx-auto px-10 justify-center items-center text-center`}>
+                    Life at IIIT - Lucknow
+                </h1>
+                <div className={`grid grid-flow-row grid-cols-1 gap-5 sm:grid-cols-3 p-5 ${styles.clubsGrid}`}>
+                    <Zoom>
+                        {clubs.map((item, index) => (
+                            <Link href={`/clubs/${item._id}`} key={index}>
+                                <div className='mx-auto justify-center items-center '>
+                                    <div className={styles.clubCard}>
+                                        {item.picture && item.picture.length > 0 && (
+                                            <img
+                                                className={styles.clubImage} 
+                                                src={urlFor(item.picture[0]).url()}
+                                                alt={`Club ${index + 1}`}
+                                            />
+                                        )}
+                                        <div className={`${styles.clubName}`}>{item.name}</div>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </Zoom>
+                </div>
             </div>
-        </div>
         </Layout>
     )   
 }
