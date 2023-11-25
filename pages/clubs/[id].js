@@ -2,7 +2,7 @@ import React from "react";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { useRouter } from "next/router";
-import Navbar from "../../components/Navbar";
+import ClubCarousel from "../../components/ClubCarousel";
 import Link from "next/link";
 import Zoom from "react-reveal/Zoom";
 import Layout from "../../components/Layout/index";
@@ -74,47 +74,44 @@ const Clubs = ({ clubs, events }) => {
                   </div>
                 </Zoom>
 
-                <div className="mt-5">
-                  <h1 className="text-7xl p-3 font-extrabold text-bluel ">
-                    People
-                  </h1>
+            <ClubCarousel />
+            <div className="mt-5">
+              <h1 className="text-7xl p-3 font-extrabold text-bluel">People</h1>
+              <div className="flex">
+                <div className="flex-1">
+                  <h1 className="text-5xl p-3 font-extrabold text-bluel my-6">Co-ordinators</h1>
                   <div className="flex">
-                    <div className="flex-1">
-                      <h1 className="text-5xl p-3 font-extrabold text-bluel my-6">
-                        Co-ordinators
-                      </h1>
-                      <div className="flex">
-                        <div className="flex-1 rounded">
-                          <img
-                            className="rounded-full"
-                            src={urlFor(item.picture[0]).url()}
-                            alt={`Image of ${item.name}`}
-                          />
-                        </div>
-                        <div className="flex-1 rounded">
-                          <img
-                            className="rounded-full"
-                            src={urlFor(item.picture[0]).url()}
-                            alt={`Image of ${item.name}`}
-                          />
-                        </div>
-                      </div>
+                    <div className="flex-1 rounded flex items-center justify-center">
+                      <img
+                        className="rounded-full"
+                        src={urlFor(item.picture[0]).url()}
+                        alt={`Image of ${item.name}`}
+                      />
                     </div>
-                    <div className="flex-1 border-l-4 border-black">
-                      <h1 className="text-5xl p-6 font-extrabold text-bluel my-6">
-                        Executives
-                      </h1>
-                      <div className="text-center items-center justify-center ">
-                      {Array(10).fill("Name of the person").map((name, index) => (
-                        <div key={index} className="text-2xl m-5">
-                          {name}
-                        </div>
-                      ))}
-                      </div>
-                      
+                    <div className="flex-1 rounded h-full w-full flex items-center justify-center">
+                      <img
+                        className="rounded-full"
+                        src={urlFor(item.picture[0]).url()}
+                        alt={`Image of ${item.name}`}
+                      />
                     </div>
                   </div>
                 </div>
+                <div className="flex-1 border-l-4 border-black">
+                  <h1 className="text-5xl p-6 font-extrabold text-bluel my-6">Executives</h1>
+                  <div className="flex flex-wrap">
+                    {Array(10).fill("Name of the person").map((name, index) => (
+                      <div key={index} className="text-2xl  m-5 flex-1/2">
+                        <li className="list-disc">{name}</li>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
               </div>
             );
           }

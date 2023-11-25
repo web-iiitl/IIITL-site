@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar";
+import Layout from "../../components/Layout/index";
 import React from "react";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
@@ -21,7 +21,8 @@ const people = ({ people }) => {
   console.log(people);
   return (
     <div>
-      <Navbar />
+      <Layout>
+
       {people.map((it, index) => {
         if (it._id == id) {
           return (
@@ -32,7 +33,7 @@ const people = ({ people }) => {
                     src={urlFor(it.picture)}
                     className="max-w-[200px] rounded-full"
                     alt=""
-                  />
+                    />
                   <h2 className="my-3 mb-10 text-2xl text-white font-semibold">
                     {`${it.name}`}
                   </h2>
@@ -40,8 +41,8 @@ const people = ({ people }) => {
                   <div className="h-[300px] overflow-y-auto my-3">
                     {it.qualifications.map((item, ind) => (
                       <button
-                        key={ind}
-                        className="py-3 bg-[#426ca9] text-white hover:font-black w-full font-medium text-xl  my-2 shadow-sm hover:scale-105 rounded-md duration-300"
+                      key={ind}
+                      className="py-3 bg-[#426ca9] text-white hover:font-black w-full font-medium text-xl  my-2 shadow-sm hover:scale-105 rounded-md duration-300"
                       >
                         <Link
                           to={item.title}
@@ -51,7 +52,7 @@ const people = ({ people }) => {
                           offset={-60}
                           duration={70}
                           className="text-inherit no-underline"
-                        >
+                          >
                           {item.title}
                         </Link>
                       </button>
@@ -75,6 +76,7 @@ const people = ({ people }) => {
           );
         }
       })}
+      </Layout>
     </div>
   );
 };

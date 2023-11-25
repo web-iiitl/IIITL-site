@@ -58,12 +58,12 @@ const Navbarr = () => {
 
   return (
     <div className="sticky top-0 z-10">
-      <Navbar expand="lg" className="px-2 py-4 bg-[#e6e6e6] text-bluel text-xl font-semibold  text-center">
+      <Navbar expand="lg" className="px-2 py-4 bg-[#e6e6e6] mx-auto text-bluel text-xl font-semibold  text-center">
         <Container >
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse >
             <Nav
-              className="me-auto my-2  my-lg-0 gap-3"
+              className="mx-auto my-2 my-lg-0 gap-3"
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
@@ -92,19 +92,14 @@ const Navbarr = () => {
               >
                 People
               </Nav.Link>
-              
-              <NavDropdown title="Courses" id="navbarScrollingDropdown" onMouseEnter={() => handleTabHover("Courses")}
+              <Nav.Link
+                href="/course"
+                onMouseEnter={() => handleTabHover("Courses")}
                 onMouseLeave={handleTabLeave}
-                className={activeTab === "Courses" ? styles.active : ""}>
-                <NavDropdown.Item href="/course/UGCourses">UG Courses</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  PG Courses
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
+                className={activeTab === "Courses" ? styles.active : ""}
+              >
+                Courses
+              </Nav.Link>
               <Nav.Link
                 href="/news"
                 onMouseEnter={() => handleTabHover("News")}
