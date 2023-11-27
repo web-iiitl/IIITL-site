@@ -10,7 +10,7 @@ const marque = () => {
         >
           <span className="inline-block h-6 w-9">
             <img src="./new.gif" alt="" />
-          </span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque.
+          </span> Admissions open for PhD students.
           <span className="inline-block h-6 w-9">
             <img src="./new.gif" alt="" />
           </span>
