@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Navbarr from '../Navbar'
 import Footer from '../Footer'
 import localFont from 'next/font/local'
@@ -7,10 +7,25 @@ import Marque from '../Marque';
 import Heading from '../Heading';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+import Script from 'next/script'
+import axios from 'axios';
 
 const myFont = localFont({ src: '../../public/Poppins-Regular.ttf' })
 
+
+
+
+let gumStream = null;
+let recorder = null;
+let audioContext = null;
+
+declare global {
+  interface Window {
+    Recorder: any;
+  }
+}
 const index = ({ children }) => {
+
 
   const theme = {
     background: '#f5f8fb',
@@ -23,32 +38,160 @@ const index = ({ children }) => {
     userBubbleColor: '#fff',
     userFontColor: '#4a4a4a',
   };
+  const audioRef = useRef(null);
+  const [audioBlob, setAudioBlob] = useState(null);
+
+  const [isHolding, setIsHolding] = useState(false);
+
+  let holdTimeout;
+
+
+
+  const startHold = () => {
+    // Set a timeout for the hold duration (e.g., 1 second)
+    holdTimeout = setTimeout(() => {
+      console.log('Button held!');
+      startRecording()
+    }, 500);
+    setIsHolding(true);
+  };
+
+  const endHold = () => {
+    // Clear the timeout to prevent the hold action if the button is released before the timeout
+    clearTimeout(holdTimeout);
+    setIsHolding(false);
+  };
+
+  const leaveButton = () => {
+    // Handle the case when the mouse leaves the button during the hold
+    console.log('Left the button during hold!');
+    stopRecordingAndSubmit()
+    clearTimeout(holdTimeout);
+    setIsHolding(false);
+  };
+
+
+
+
+
+
+
+  const startRecording = () => {
+    let constraints = {
+      audio: true,
+      video: false,
+    };
+    console.log("hello")
+
+    audioContext = new window.AudioContext();
+    console.log('sample rate: ' + audioContext.sampleRate);
+
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then(function (stream) {
+        console.log('initializing Recorder.js ...');
+
+        gumStream = stream;
+
+        let input = audioContext.createMediaStreamSource(stream);
+
+        recorder = new window.Recorder(input, {
+          numChannels: 1,
+        });
+
+        recorder.record();
+        console.log('Recording started');
+      })
+      .catch(function (err) {
+        // enable the record button if getUserMedia() fails
+        console.log(err);
+      });
+  };
+
+  const stopRecordingAndSubmit = () => {
+    console.log('stopButton clicked');
+    
+    if(recorder!=null){
+      
+    
+    recorder.stop(); // stop microphone access
+    gumStream.getAudioTracks()[0].stop();
+
+    recorder.exportWAV((blob) => {
+      onStop(blob);
+      setAudioBlob(blob); // store the audio blob in state
+
+      // Send the recorded audio to the backend and play the returned audio
+      if (blob) {
+        let data = new FormData();
+        data.append('audio', blob, 'recording.mp3');
+
+        axios.post('http://209.51.170.17:8970/api/v1/sts', data)
+          .then(response => {
+            // Handle the response from the backend
+            const { completion, transcript, audio } = response.data;
+
+            // You can use completion, transcript as needed
+            console.log('Completion:', completion);
+            console.log('Transcript:', transcript);
+
+            // Play the returned audio
+            const returnedAudioUrl = `data:audio/mp3;base64,${audio}`;
+            audioRef.current.src = returnedAudioUrl;
+            audioRef.current.play();
+          })
+          .catch(error => {
+            console.error('Error sending audio to the backend:', error);
+          });
+      }
+    });
+  }
+  };
+
+
+  const onStop = (blob) => {
+    console.log('uploading...');
+
+    let data = new FormData();
+
+    data.append('text', 'this is the transcription of the audio file');
+    data.append('wavfile', blob, 'recording.wav');
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+    };
+
+    // axios.post('http://localhost:8080/asr/', data, config);
+  };
 
   return (
     <div className={myFont.className}>
+
+
+      <Script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js" />
       <div className='bg-[#f7f7f7] max-w-[2200px] m-auto'>
         <div className=' scale-75 z-50 bottom-0 right-0 fixed'>
-        <ThemeProvider theme={theme}>
-          <ChatBot 
-          headerTitle="IIIT Lucknow Chatbot"
-          steps={[
-            {
-              id: '1',
-              message: 'What is your name?',
-              trigger: '2',
-            },
-            {
-              id: '2',
-              user: true,
-              trigger: '3',
-            },
-            {
-              id: '3',
-              message: 'Hi {previousValue}, nice to meet you!',
-              end: true,
-            },
-          ]} />
-          </ThemeProvider>
+          {/* <ThemeProvider theme={theme}>
+            <ChatBot
+              headerTitle="IIIT Lucknow Chatbot"
+              steps={[
+                {
+                  id: '1',
+                  message: 'What is your name?',
+                  trigger: '2',
+                },
+                {
+                  id: '2',
+                  user: true,
+                  trigger: '3',
+                },
+                {
+                  id: '3',
+                  message: 'Hi {previousValue}, nice to meet you!',
+                  end: true,
+                },
+              ]} />
+          </ThemeProvider> */}
         </div>
 
         <Zoom>
@@ -79,6 +222,16 @@ const index = ({ children }) => {
         <Heading />
         <Navbarr />
         <div className=''>
+          <div>
+            <button className='hover:scale-110  cursor-pointer  fixed bottom-10 right-[50px]  ' 
+              onMouseDown={startHold}
+              onMouseUp={endHold}
+              onMouseLeave={leaveButton} type="button">
+              <img className='w-20  hover:scale-110 h-20 rounded-full' src="https://img.freepik.com/premium-vector/robot-icon-bot-sign-design-chatbot-symbol-concept-voice-support-service-bot-online-support-bot-vector-stock-illustration_100456-34.jpg" alt="" />
+             </button>
+           
+            <audio className='hidden' ref={audioRef} controls />
+          </div>
           {children}
         </div>
         <Footer />

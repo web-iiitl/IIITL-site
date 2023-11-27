@@ -4,7 +4,6 @@ import imageUrlBuilder from "@sanity/image-url";
 import Container from "./Containers/index";
 
 const HomeClub: React.FC = ({ clubs }: any) => {
-  console.log(clubs);
   
   const client = createClient({
     projectId: process.env.NEXT_PUBLIC_CLUB_ID,

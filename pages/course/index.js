@@ -5,6 +5,7 @@ import Link from 'next/link';
 import PortableText from "react-portable-text"
 import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar'
+import Layout from '../../components/Layout'
 
 const index = ({course,admissions}) => {
     const router = useRouter()
@@ -21,27 +22,28 @@ const index = ({course,admissions}) => {
     }
   return (
     <div>
-    <Navbar/>
+    <Layout>
     <div className='p-20'>
-      {
-          course.map((item,ind)=>{
-              {
+    {
+        course.map((item,ind)=>{
+            {
                   return(
-                    <div>
-                     <h1 className='font-semibold mb-4 text-2xl'>{item.title}</h1>
-                     <PortableText
-                                    content={item.content}
-                                    serializers={{
-                                    }}
-                                />
+                      <div>
+                      <h1 className='font-semibold mb-4 text-2xl'>{item.title}</h1>
+                      <PortableText
+                      content={item.content}
+                      serializers={{
+                    }}
+                    />
                     </div>
                     )
                 }
             })
         }
-     </div>
-       
-
+        </div>
+        
+        </Layout>
+        
     </div>
   )
 }

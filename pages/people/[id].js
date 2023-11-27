@@ -38,7 +38,7 @@ const people = ({ people }) => {
                     {`${it.name}`}
                   </h2>
                   <span className="text-white text-xl font-medium">{`(${it.post})`}</span>
-                  <div className="h-[300px] overflow-y-auto my-3">
+                  <div className="h-[500px] overflow-x-hidden overflow-y-auto my-3">
                     {it.qualifications.map((item, ind) => (
                       <button
                       key={ind}
