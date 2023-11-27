@@ -143,13 +143,13 @@ const Navbarr = () => {
                   Project Vacancy
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link
+              {/* <Nav.Link
                 href="/"
                 onMouseEnter={() => handleTabHover("Additional")}
                 onMouseLeave={handleTabLeave}
               >
                 Additional
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
            
           </Navbar.Collapse>
