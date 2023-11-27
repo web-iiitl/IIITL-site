@@ -53,6 +53,30 @@ const news = ({news,annoucements}) => {
       <div className="flex flex-col gap-2 font-serif lg:text-5xl text-bluel md:text-5xl p-10 sm:text-4xl max-sm:text-2xl">
               <div className="font-bold border-b-4 border-bluel">Public Annoucements</div>
       </div>
+
+      <div className='grid grid-flow-row grid-cols-1 lg:grid-cols-2 bg-gray-800 rounded-md m-4'>
+           <div className='text-white'>
+             {
+                news[0]?
+                <div className=' animate__animated animate__fadeInLeft'>
+                  <a href={news[0].link}>
+                   <img src={urlFor(news[0].picture)} alt="" className='p-4 rounded-md'/>
+                  </a>
+                </div>:null
+             }
+           </div>
+           <div>
+              {
+                annoucements.map((it,index)=>{
+                  return(
+                    <div key={index} className="my-4">
+                     <h2 className='text-xl animate__animated animate__fadeInLeft text-white underline decoration-sky-500'>{it.title}</h2>
+                    </div>
+                  )
+                })
+              }
+           </div>
+      </div>
        
     </Layout>
     </div>
