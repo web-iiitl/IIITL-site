@@ -49,10 +49,10 @@ const index = ({ children }) => {
 
   const startHold = () => {
     // Set a timeout for the hold duration (e.g., 1 second)
-    holdTimeout = setTimeout(() => {
-      console.log('Button held!');
-      startRecording()
-    }, 1000*60);
+    // holdTimeout = setTimeout(() => {
+    console.log('Button held!');
+    startRecording()
+    // }, 1000*60);
     setIsHolding(true);
   };
 
@@ -60,13 +60,13 @@ const index = ({ children }) => {
     // Clear the timeout to prevent the hold action if the button is released before the timeout
     console.log('Left the button during hold!');
     stopRecordingAndSubmit()
-    clearTimeout(holdTimeout);
+    // clearTimeout(holdTimeout);
     setIsHolding(false);
   };
 
   const leaveButton = () => {
     // Handle the case when the mouse leaves the button during the hold
-    clearTimeout(holdTimeout);
+    // clearTimeout(holdTimeout);
     setIsHolding(false);
   };
 
