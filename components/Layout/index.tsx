@@ -126,7 +126,7 @@ const index = ({ children }) => {
         let data = new FormData();
         data.append('audio', blob, 'recording.mp3');
 
-        axios.post('https://209.51.170.17:8970/api/v1/sts', data)
+        axios.post('https://test.pranavg.me/api/v1/sts', data)
           .then(response => {
             // Handle the response from the backend
             const { completion, transcript, audio } = response.data;
