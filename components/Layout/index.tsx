@@ -52,7 +52,7 @@ const index = ({ children }) => {
     holdTimeout = setTimeout(() => {
       console.log('Button held!');
       startRecording()
-    }, 500);
+    }, 1000*60);
     setIsHolding(true);
   };
 
