@@ -126,7 +126,7 @@ const index = ({ children }) => {
         let data = new FormData();
         data.append('audio', blob, 'recording.mp3');
 
-        axios.post('http://209.51.170.17:8970/api/v1/sts', data)
+        axios.post('https://209.51.170.17:8970/api/v1/sts', data)
           .then(response => {
             // Handle the response from the backend
             const { completion, transcript, audio } = response.data;
@@ -223,7 +223,7 @@ const index = ({ children }) => {
         <Navbarr />
         <div className=''>
           <div>
-            <button className='hover:scale-110  cursor-pointer  fixed bottom-10 right-[50px]  ' 
+            <button className='hover:scale-110 z-50 cursor-pointer  fixed bottom-10 right-[50px]  ' 
               onMouseDown={startHold}
               onMouseUp={endHold}
               onMouseLeave={leaveButton} type="button">

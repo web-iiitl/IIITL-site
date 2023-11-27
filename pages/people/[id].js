@@ -42,7 +42,7 @@ const people = ({ people }) => {
                     {it.qualifications.map((item, ind) => (
                       <button
                       key={ind}
-                      className="py-3 bg-[#426ca9] text-white hover:font-black w-full font-medium text-xl  my-2 shadow-sm hover:scale-105 rounded-md duration-300"
+                      className="py-3  bg-[#426ca9] text-white hover:font-black w-full font-medium text-xl  my-2 shadow-sm hover:scale-105 rounded-md duration-300"
                       >
                         <Link
                           to={item.title}
