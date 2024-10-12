@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee"
 
 const marque = () => {
   return (
-    <div className="bg-bluel text-white font-bold  p-1">
+    <div className="bg-bluel text-white font-bold  p-1 ">
       <Marquee
           gradient={true}
           gradientColor={'26, 140, 184'}

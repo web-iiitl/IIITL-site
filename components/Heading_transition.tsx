@@ -11,7 +11,7 @@ function Head() {
 
   return (
       <div
-      className="m-4 text-xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl  font-medium text-right opacity-60 text-gray-500 leading-snug justify-center items-center"
+      className="md:m-4 max-sm:mx-0 max-md:m-2 max-sm:text-base max-md:text-xl max-lg:text-2xl max-xl:text-3xl xl:text-4xl  font-medium text-right opacity-60 text-gray-500 leading-snug justify-center items-center"
       style={{
         opacity: 1,
         animation: 'fadeIn 3s ease-in-out',
@@ -22,7 +22,7 @@ function Head() {
       <br />
       भारतीय   सूचना   प्रौद्योगिकी   संस्थान, लखनऊ
       <br />
-      <span className="float-right animate__zoomOutRight text-xl md:text-lg lg:text-xl xl:text-2xl text-gray-500">(An Institute of National Importance by the Act of Parliament)</span>
+      <span className="float-right animate__zoomOutRight max-sm:text-xs max-md:text-lg max-lg:text-2xl max-xl:text-3xl xl:text-4xl text-gray-500">(An Institute of National Importance by the Act of Parliament)</span>
     </div>
 
   );
