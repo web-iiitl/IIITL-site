@@ -57,9 +57,9 @@ const Navbarr = () => {
   }, [router.pathname]);
 
   return (
-    <div className="sticky top-0 z-10">
-      <Navbar expand="lg" className="px-2 py-4 bg-[#e6e6e6] mx-auto text-bluel text-xl font-semibold  text-center">
-        <Container >
+    <div className="sticky top-0 z-10 border border-black">
+      <Navbar expand="lg" className="max-sm:px-0  max-sm:py-0 bg-[#e6e6e6]  text-bluel text-xl font-semibold text-center">
+        <Container>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse >
             <Nav
@@ -71,7 +71,6 @@ const Navbarr = () => {
                 href="/"
                 onMouseEnter={() => handleTabHover("Home")}
                 onMouseLeave={handleTabLeave}
-                
                 className={activeTab === "Home" ? styles.active : ""}
               >
                 Home
