@@ -39,6 +39,7 @@ const People = ({ people, departments, departmentName }) => {
     departmentName ? dept.name === departmentName : true
   );
 
+
   return (
     <Layout>
       <div className="px-20">

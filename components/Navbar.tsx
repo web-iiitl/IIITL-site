@@ -14,6 +14,8 @@ const Navbarr = () => {
   const router = useRouter();
 
   const [activeTab, setActiveTab] = useState("Home");
+  const [showPeopleDropdown, setShowPeopleDropdown] = useState(false);
+  const [showCareersDropdown, setShowCareersDropdown] = useState(false);
 
   const handleTabHover = (tabName) => {
     setActiveTab(tabName);
@@ -87,9 +89,17 @@ const Navbarr = () => {
               <NavDropdown
                 title="People"
                 id="navbarScrollingDropdown"
-                onMouseEnter={() => handleTabHover("People")}
-                onMouseLeave={handleTabLeave}
+                onMouseEnter={() => {
+                  handleTabHover("People");
+                  setShowPeopleDropdown(true);
+                }}
+                onMouseLeave={() => {
+                  handleTabLeave();
+                  setShowPeopleDropdown(false);
+                }}
+                show={showPeopleDropdown}
                 className={activeTab === "People" ? styles.active : ""}
+                
               >
                 <NavDropdown.Item href="/people?department=Director">
                   Director
@@ -144,8 +154,15 @@ const Navbarr = () => {
               <NavDropdown
                 title="Careers@IIITL"
                 id="navbarScrollingDropdown"
-                onMouseEnter={() => handleTabHover("careers@iiitl")}
-                onMouseLeave={handleTabLeave}
+                onMouseEnter={() => {
+                  handleTabHover("careers@iiitl");
+                  setShowCareersDropdown(true);
+                }}
+                onMouseLeave={() => {
+                  handleTabLeave();
+                  setShowCareersDropdown(false);
+                }}
+                show={showCareersDropdown}
                 className={activeTab === "careers@iiitl" ? styles.active : ""}
               >
                 <NavDropdown.Item href="/careers/Nonteach_pos">
