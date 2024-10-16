@@ -1,20 +1,21 @@
 import Link from "next/link";
-import { useRouter } from "next/router"; 
-import { useState, useEffect } from "react"; 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "next/image";
-import Heading from "./Heading";  
-import styles from "./Navbarr.module.css"; 
+import Heading from "./Heading";
+import styles from "./Navbarr.module.css";
 import React from "react";
 
-
 const Navbarr = () => {
-  const router = useRouter(); 
+  const router = useRouter();
 
-  const [activeTab, setActiveTab] = useState("Home"); 
+  const [activeTab, setActiveTab] = useState("Home");
+  const [showPeopleDropdown, setShowPeopleDropdown] = useState(false);
+  const [showCareersDropdown, setShowCareersDropdown] = useState(false);
 
   const handleTabHover = (tabName) => {
     setActiveTab(tabName);
@@ -34,7 +35,6 @@ const Navbarr = () => {
     } else if (router.pathname.startsWith("/studentLife")) {
       setActiveTab("studentLife");
     }
-    
   };
 
   useEffect(() => {
@@ -52,26 +52,26 @@ const Navbarr = () => {
     } else if (router.pathname.startsWith("/studentLife")) {
       setActiveTab("studentLife");
     }
-    
+
     // Add similar conditions for other pages
   }, [router.pathname]);
 
   return (
-    <div className="sticky top-0 z-10">
-      <Navbar expand="lg" className="px-2 py-4 bg-[#e6e6e6] mx-auto text-bluel text-xl font-semibold  text-center">
-        <Container >
+
+    <div className="sticky top-0 z-10 ">
+      <Navbar expand="lg" className=" py-1 sm:py-5 bg-[#e6e6e6]  text-bluel text-xl font-semibold text-center">
+        <Container>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse >
+          <Navbar.Collapse>
             <Nav
               className="mx-auto my-2 my-lg-0 gap-3"
-              style={{ maxHeight: '100px' }}
+              style={{ maxHeight: "100px" }}
               navbarScroll
             >
               <Nav.Link
                 href="/"
                 onMouseEnter={() => handleTabHover("Home")}
                 onMouseLeave={handleTabLeave}
-                
                 className={activeTab === "Home" ? styles.active : ""}
               >
                 Home
@@ -81,17 +81,34 @@ const Navbarr = () => {
                 onMouseEnter={() => handleTabHover("Admissions")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "Admissions" ? styles.active : ""}
-              > 
+              >
                 Admissions
               </Nav.Link>
-              <Nav.Link
-                href="/people"
-                onMouseEnter={() => handleTabHover("People")}
-                onMouseLeave={handleTabLeave}
+              <NavDropdown
+                title="People"
+                id="navbarScrollingDropdown"
+                onMouseEnter={() => {
+                  handleTabHover("People");
+                  setShowPeopleDropdown(true);
+                }}
+                onMouseLeave={() => {
+                  handleTabLeave();
+                  setShowPeopleDropdown(false);
+                }}
+                show={showPeopleDropdown}
                 className={activeTab === "People" ? styles.active : ""}
+                
               >
-                People
-              </Nav.Link>
+                <NavDropdown.Item href="/people?department=Director">
+                  Director
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/people?department=Faculty">
+                  Faculty
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/people?department=Visiting Faculty">
+                  Visiting Faculty
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link
                 href="/course"
                 onMouseEnter={() => handleTabHover("Courses")}
@@ -132,10 +149,23 @@ const Navbarr = () => {
               >
                 Placements
               </Nav.Link>
-              <NavDropdown title="Careers@IIITL" id="navbarScrollingDropdown"  onMouseEnter={() => handleTabHover("careers@iiitl")}
-                onMouseLeave={handleTabLeave}
-                className={activeTab === "careers@iiitl" ? styles.active : ""}>
-                <NavDropdown.Item href="/careers/Nonteach_pos">Non Teaching Positions</NavDropdown.Item>
+              <NavDropdown
+                title="Careers@IIITL"
+                id="navbarScrollingDropdown"
+                onMouseEnter={() => {
+                  handleTabHover("careers@iiitl");
+                  setShowCareersDropdown(true);
+                }}
+                onMouseLeave={() => {
+                  handleTabLeave();
+                  setShowCareersDropdown(false);
+                }}
+                show={showCareersDropdown}
+                className={activeTab === "careers@iiitl" ? styles.active : ""}
+              >
+                <NavDropdown.Item href="/careers/Nonteach_pos">
+                  Non Teaching Positions
+                </NavDropdown.Item>
                 <NavDropdown.Item href="/careers/Faculty_pos">
                   Faculty Positions
                 </NavDropdown.Item>
@@ -151,7 +181,6 @@ const Navbarr = () => {
                 Additional
               </Nav.Link> */}
             </Nav>
-           
           </Navbar.Collapse>
         </Container>
       </Navbar>
