@@ -38,7 +38,34 @@ const People = ({ people, departments, departmentName }) => {
   const filteredDepartments = departments.filter((dept) =>
     departmentName ? dept.name === departmentName : true
   );
+  
+  const peopleArray = [];
 
+  const sortTheArray = () => {
+    peopleArray.sort((a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+    if(nameA < nameB) return -1;
+    else return 1;
+    });
+  };
+
+  const LayoutForFaculty = () => {
+    sortTheArray();
+    return <div>
+      {peopleArray.map((wm) => {
+        return (
+          <TeamMember
+            key={wm._id}
+            name={wm.name}
+            pictureUrl={wm.picture}
+            id={wm._id}
+            info={wm.post}
+          />
+        );
+      })}
+    </div>
+  }
 
   return (
     <Layout>
@@ -49,25 +76,31 @@ const People = ({ people, departments, departmentName }) => {
             {item?.people?.map((it, ind) => (
               <div key={ind}>
                 <h1 className="text-2xl my-4 border-b-2 border-slate-400">{it.SubDepartment}</h1>
-                <div className="grid grid-flow-row md:grid-cols-4 gap-3">
+                <div>
                   {it.people?.map((ct, num) => (
                     <div key={num}>
                       {people.map((wm) => {
                         if (wm._id === ct._ref) {
-                          return (
-                            <TeamMember
-                              key={wm._id}
-                              name={wm.name}
-                              pictureUrl={wm.picture}
-                              id={wm._id}
-                              info={wm.post}
-                            />
-                          );
+                          peopleArray.push(wm);
+                          console.log(peopleArray)
                         }
-                        return null;
                       })}
                     </div>
                   ))}
+                </div>
+                <div className="grid grid-flow-row md:grid-cols-4 gap-3">
+                  {sortTheArray()}
+                    {peopleArray.map((wm) => {
+                      return (
+                        <TeamMember
+                          key={wm._id}
+                          name={wm.name}
+                          pictureUrl={wm.picture}
+                          id={wm._id}
+                          info={wm.post}
+                        />
+                      );
+                    })}
                 </div>
               </div>
             ))}
@@ -86,6 +119,8 @@ export async function getServerSideProps(context) {
   });
   const people = await client.fetch(`*[_type == "people"]`);
   const departments = await client.fetch(`*[_type == "departments"]`);
+
+  console.log( "People : ", people)
 
   return {
     props: {
