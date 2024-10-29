@@ -16,7 +16,7 @@ const Navbarr = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const [showPeopleDropdown, setShowPeopleDropdown] = useState(false);
   const [showCareersDropdown, setShowCareersDropdown] = useState(false);
-
+  const [showCoursesDropdown, setShowCoursesDropdown] = useState(false);
   const handleTabHover = (tabName) => {
     setActiveTab(tabName);
   };
@@ -109,14 +109,38 @@ const Navbarr = () => {
                   Visiting Faculty
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link
+              {/* <Nav.Link
                 href="/course"
                 onMouseEnter={() => handleTabHover("Courses")}
                 onMouseLeave={handleTabLeave}
                 className={activeTab === "Courses" ? styles.active : ""}
               >
                 Courses
-              </Nav.Link>
+              </Nav.Link> */}
+              <NavDropdown
+                title="Courses"
+                id="navbarScrollingDropdown"
+                onMouseEnter={() => {
+                  handleTabHover("Courses");
+                  setShowCoursesDropdown(true);
+                }}
+                onMouseLeave={() => {
+                  handleTabLeave();
+                  setShowCoursesDropdown(false);
+                }}
+                show={showCoursesDropdown}
+                className={activeTab === "Courses" ? styles.active : ""}
+              >
+                <NavDropdown.Item href="/course?department=BTech">
+                  B.Tech
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/course?department=MTech">
+                  M.Tech
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/course?department=Phd">
+                  Ph.D
+                </NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link
                 href="/news"
                 onMouseEnter={() => handleTabHover("News")}
