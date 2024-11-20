@@ -1,0 +1,40 @@
+name: Sync Fork with Upstream
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour on the hour
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the forked repository using the personal access token
+      - name: Checkout Fork
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          ref: main # Replace with the default branch of your fork if different
+
+      # Step 2: Set up Git to make changes
+      - name: Set Up Git for Sync
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
+      # Step 3: Add the upstream (parent) repository as a remote
+      - name: Add Upstream Remote
+        run: git remote add upstream https://github.com/SaRTHaK0909k/IIITL-site
+
+      # Step 4: Fetch upstream changes
+      - name: Fetch Upstream Changes
+        run: git fetch upstream
+
+      # Step 5: Merge upstream changes into fork's main branch
+      - name: Merge Upstream into Fork
+        run: |
+          git merge -X theirs upstream/main --allow-unrelated-histories || true
+          git push https://$TOKEN@github.com/web-iiitl/IIITL-site main
+        env:
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
