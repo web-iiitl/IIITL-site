@@ -69,7 +69,7 @@ const About = () => {
             <iframe
               width="80%"
               height="400"
-              src="https://www.youtube.com/embed/Aq-zIMBbWog?si=C2IDlxaOVb_dZPdQ"
+              src="https://www.youtube.com/embed/EsMveuajWxo?si=xymokVk7EBppFlcJ"
               title="YouTube Video"
               className="absolute max-sm:translate-y-[-200px] translate-y-[-120px] max-lg:translate-y-[-350px] max-lg:h-[300px] max-sm:translate-x-3 xl:translate-y-[-400px] max-sm:h-[180px] lg:translate-y-[-500px]  translate-x-[30px] w-[90%] xl:h-[450px] lg:h-[500px] h-[100px] rounded-lg"
             ></iframe>
