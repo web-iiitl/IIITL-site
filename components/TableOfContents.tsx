@@ -1,9 +1,9 @@
 "use client"
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 
 
 type Props= {
-  children: string | JSX.Element | JSX.Element[]
+  children: string | React.JSX.Element | React.JSX.Element[]
 }
 
 type Heading = {

@@ -1,6 +1,7 @@
+import React from 'react'
 type Props= {
   heading: string,
-  children: string | JSX.Element | JSX.Element[],
+  children: string | React.JSX.Element | React.JSX.Element[],
   id: string
 }
 
