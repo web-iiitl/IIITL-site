@@ -1,5 +1,6 @@
+import React from 'react';
 type Props= {
-    children: string | JSX.Element | JSX.Element[]
+    children: string | React.JSX.Element | React.JSX.Element[]
 }
 
 export default function Subheading({children}: Props) {
